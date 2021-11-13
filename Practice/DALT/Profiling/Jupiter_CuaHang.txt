@@ -2,11 +2,20 @@
 <DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
   <ProfileVersion>1.0</ProfileVersion>
   <DataSources>
-    <DtsDataSource ID="{600327AD-449A-4189-9C85-E40F9CFA37CC}" Name="Jupiter_CuaHang.txt">
+    <DtsDataSource ID="{11A2FBDF-E7BE-42F4-9305-D3F44B07BE53}" Name="Jupiter_CuaHang.txt">
       <DtsConnectionManagerID>Jupiter_CuaHang.txt</DtsConnectionManagerID>
     </DtsDataSource>
-    <DtsDataSource ID="{B35F6644-CB21-4278-A64C-22A428E3EA43}" Name="Jupiter_LoaiCuaHang.txt">
+    <DtsDataSource ID="{9BDF0866-3366-4278-9BB9-0AD52BDDD05F}" Name="Jupiter_LoaiCuaHang.txt">
       <DtsConnectionManagerID>Jupiter_LoaiCuaHang.txt</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{6D468E58-6B2A-431D-83F5-DE5EAC200575}" Name="Jupiter_LoaiSanPham.txt">
+      <DtsConnectionManagerID>Jupiter_LoaiSanPham.txt</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{F4F20733-A05C-43C2-8DF6-BD8A41250869}" Name="Jupiter_Nuoc.txt">
+      <DtsConnectionManagerID>Jupiter_Nuoc.txt</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{EF3A2A7E-A486-4825-84AE-4158A37D3810}" Name="Jupiter_SanPham.txt">
+      <DtsConnectionManagerID>Jupiter_SanPham.txt</DtsConnectionManagerID>
     </DtsDataSource>
     <DtsDataSource ID="{71862845-CF71-454D-8EAF-3D4B8582212E}" Name="LocalHost.Jade">
       <DtsConnectionManagerID>LocalHost.Jade</DtsConnectionManagerID>

@@ -5,52 +5,52 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-0IA21OI"
   DTS:CreatorName="DESKTOP-0IA21OI\NhatTan"
-  DTS:DTSID="{BCABA02A-D0C6-4353-A342-B4B4D81644BC}"
+  DTS:DTSID="{41E4C664-7F53-42BA-8E25-D3691E6290F3}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="WebTower_Staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{4AC18D1D-D576-41F2-83F8-F146C051AE60}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{99B11C59-F2ED-4B48-A46C-7CE88696046B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[WebTower9_ChiTietHoaDon.txt]"
       DTS:CreationName="FILE"
-      DTS:DTSID="{F8222612-65FA-4B76-BFE0-20A3430906D7}"
+      DTS:DTSID="{D75D3E7A-1047-430D-A362-25B8ACD7FB1D}"
       DTS:ObjectName="WebTower9_ChiTietHoaDon.txt">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="D:\Downloads\BI\BI_Project\DALT\Practice\DALT\Profiling\WebTower9_ChiTietHoaDon.txt" />
+          DTS:ConnectionString="D:\Downloads\BI\BI_Project\DALT\Selling-Data-warehouse\Practice\DALT\Profiling\WebTower9_ChiTietHoaDon.txt" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Webtower9_HoaDon.txt]"
       DTS:CreationName="FILE"
-      DTS:DTSID="{94D06668-4A7A-413B-83C1-362A8C96DBEB}"
+      DTS:DTSID="{AB31085F-FE8A-4C67-90B6-EB456DB9614D}"
       DTS:ObjectName="Webtower9_HoaDon.txt">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="D:\Downloads\BI\BI_Project\DALT\Practice\DALT\Profiling\Webtower9_HoaDon.txt" />
+          DTS:ConnectionString="D:\Downloads\BI\BI_Project\DALT\Selling-Data-warehouse\Practice\DALT\Profiling\Webtower9_HoaDon.txt" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[WebTower9_KhachHang.txt]"
       DTS:CreationName="FILE"
-      DTS:DTSID="{24D5F88C-D209-4B9A-B3FE-ABCB6D1A6B8B}"
+      DTS:DTSID="{F36310E5-690F-42B9-BC59-CD6AC4D849BB}"
       DTS:ObjectName="WebTower9_KhachHang.txt">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="D:\Downloads\BI\BI_Project\DALT\Practice\DALT\Profiling\WebTower9_KhachHang.txt" />
+          DTS:ConnectionString="D:\Downloads\BI\BI_Project\DALT\Selling-Data-warehouse\Practice\DALT\Profiling\WebTower9_KhachHang.txt" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A67D37C2-6456-48C4-8049-F875307E2BB6}"
+      DTS:DTSID="{EE069A70-8929-4202-8A3C-DC076656AF30}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="CETResult">
@@ -59,7 +59,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DABF0526-6C4C-4B6F-B8DC-82EE803E6387}"
+      DTS:DTSID="{322F159C-C9D9-4030-9520-FBE1DC6A2540}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="LSETResult">
@@ -72,7 +72,7 @@
       DTS:refId="Package\CTHD_WebTower Staging"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{3cfe5fda-ef3f-4faf-bea7-7ffdf3ae6bac}"
+      DTS:DTSID="{59625C58-CB35-4051-BE7C-E9F3198FA26F}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CTHD_WebTower Staging"
@@ -281,7 +281,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;=?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{DABF0526-6C4C-4B6F-B8DC-82EE803E6387};"Parameter1:Input",{A67D37C2-6456-48C4-8049-F875307E2BB6};"Parameter2:Input",{DABF0526-6C4C-4B6F-B8DC-82EE803E6387};"Parameter3:Input",{A67D37C2-6456-48C4-8049-F875307E2BB6};</property>
+                  name="ParameterMapping">"Parameter0:Input",{322F159C-C9D9-4030-9520-FBE1DC6A2540};"Parameter1:Input",{EE069A70-8929-4202-8A3C-DC076656AF30};"Parameter2:Input",{322F159C-C9D9-4030-9520-FBE1DC6A2540};"Parameter3:Input",{EE069A70-8929-4202-8A3C-DC076656AF30};</property>
               </properties>
               <connections>
                 <connection
@@ -458,12 +458,12 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;=?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Get CET_CTHD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{28208785-a852-443f-9ba3-1283a5e50ac4}"
+      DTS:DTSID="{7BC67F7E-99F3-4815-94B3-620628A671A4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -480,12 +480,12 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;=?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Get CET_HD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{38FA19D4-F32A-46DE-9EEE-10B7B2D8F234}"
+      DTS:DTSID="{DFA4F4EA-FE9B-4AB6-A0A5-19078A5C3645}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -502,12 +502,12 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;=?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Get CET_KH"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{fcee30b0-f7b3-43b2-a7ca-7cc92dac5b45}"
+      DTS:DTSID="{98791AFB-C5C0-4F77-9B73-3D5A63C99793}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_KH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -524,12 +524,12 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;=?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Get LSET_CTHD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{b9f70e68-d535-4b60-98d3-04f04b63bf2b}"
+      DTS:DTSID="{EAE5ABF3-4842-47C7-AF0C-9F7DBE4DD167}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -546,12 +546,12 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;=?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Get LSET_HD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{F8ED3492-BD2D-470A-AF6A-316ED0CC596F}"
+      DTS:DTSID="{42FC4AFD-83DC-4C4C-BA03-F559F2AE233C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -568,12 +568,12 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;=?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\Get LSET_KH"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{07aaccc0-6322-491f-ab25-e07274921945}"
+      DTS:DTSID="{D98FC763-884C-4C9C-B1CB-30C1CA57D9FA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_KH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -590,7 +590,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;=?) OR (NgayCapNhat &gt;= ? AND NgayCapNh
       DTS:refId="Package\HoaDonWebTower Staging"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{039827E8-808E-4D0E-9C35-4BB915F431CE}"
+      DTS:DTSID="{BC41EEF9-00E9-454F-97C2-AA9563E32DD9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="HoaDonWebTower Staging"
@@ -813,7 +813,7 @@ WHERE (NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{DABF0526-6C4C-4B6F-B8DC-82EE803E6387};"Parameter1:Input",{A67D37C2-6456-48C4-8049-F875307E2BB6};</property>
+                  name="ParameterMapping">"Parameter0:Input",{322F159C-C9D9-4030-9520-FBE1DC6A2540};"Parameter1:Input",{EE069A70-8929-4202-8A3C-DC076656AF30};</property>
               </properties>
               <connections>
                 <connection
@@ -996,7 +996,7 @@ WHERE (NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)</property>
       DTS:refId="Package\KH_WebTower Staging"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{ce6d7968-b462-4152-9701-9e40efcb8589}"
+      DTS:DTSID="{41459F3D-5626-4E6A-86CD-B2AB25AA6738}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="KH_WebTower Staging"
@@ -1251,7 +1251,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{DABF0526-6C4C-4B6F-B8DC-82EE803E6387};"Parameter1:Input",{A67D37C2-6456-48C4-8049-F875307E2BB6};"Parameter2:Input",{DABF0526-6C4C-4B6F-B8DC-82EE803E6387};"Parameter3:Input",{A67D37C2-6456-48C4-8049-F875307E2BB6};</property>
+                  name="ParameterMapping">"Parameter0:Input",{322F159C-C9D9-4030-9520-FBE1DC6A2540};"Parameter1:Input",{EE069A70-8929-4202-8A3C-DC076656AF30};"Parameter2:Input",{322F159C-C9D9-4030-9520-FBE1DC6A2540};"Parameter3:Input",{EE069A70-8929-4202-8A3C-DC076656AF30};</property>
               </properties>
               <connections>
                 <connection
@@ -1506,12 +1506,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
       DTS:refId="Package\Profiling_CTHD"
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
-      DTS:DTSID="{98e33111-b6f6-4606-afcc-dcc718b367a2}"
+      DTS:DTSID="{D3143389-2393-48DF-AB97-C43C89291CDF}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_CTHD"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1584,12 +1584,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
       DTS:refId="Package\Profiling_WHD"
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
-      DTS:DTSID="{A99FA04D-EBEF-45E3-BE9D-7D01D6DE453B}"
+      DTS:DTSID="{73D5FA4A-6296-4FC5-9442-1FF153573A9D}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_WHD"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1662,12 +1662,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
       DTS:refId="Package\Profiling_WKH"
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
-      DTS:DTSID="{E91947E8-D342-4AE8-97B7-894141C3AF05}"
+      DTS:DTSID="{F6AED06F-1D3C-4D4D-B5A0-95B811A971D6}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_WKH"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1740,12 +1740,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
       DTS:refId="Package\Truncate stage_CTHD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{35a3ab8e-ad2b-4c13-a759-fd5f0a15553f}"
+      DTS:DTSID="{0FF4BEA6-3291-4E80-8A4E-77F1AAC95BC5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1757,12 +1757,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
       DTS:refId="Package\Truncate stage_HD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{C61F5BB7-26CC-41DB-B767-DD0787310285}"
+      DTS:DTSID="{99D7F92D-4629-4A74-8F89-D795ABCBDE2A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1774,12 +1774,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
       DTS:refId="Package\Truncate stage_KH"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{2532a1ef-6d10-413a-8a38-5987d24b019a}"
+      DTS:DTSID="{77A659C5-D8ED-46B0-AA06-FD1A12C3529A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_KH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1791,12 +1791,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
       DTS:refId="Package\Update LSET_CTHD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{66d40a11-bcb2-4219-9d4c-82d0a2a06405}"
+      DTS:DTSID="{4904673C-5B97-422D-81F4-D9F9F2BDCC30}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1808,12 +1808,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
       DTS:refId="Package\Update LSET_HD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D62FD417-6DDA-4312-9065-3FC08781A41A}"
+      DTS:DTSID="{970DF470-F867-4DA2-9F31-0A683E80F879}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1825,12 +1825,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
       DTS:refId="Package\Update LSET_KH"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6e632ab8-0fab-43a5-a69b-c6c728fbc165}"
+      DTS:DTSID="{16194904-ED18-4F79-BDEC-EDF987B7C06B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_KH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1850,7 +1850,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{B1EFCB1D-EFDD-4190-A783-EA7D9F89CF15}"
+      DTS:DTSID="{0DAEF31B-825F-46C7-8FDB-1643B0AE96C5}"
       DTS:From="Package\Get CET_HD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1858,7 +1858,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{174ac231-dbbb-4dee-8caf-8c20db9439d9}"
+      DTS:DTSID="{1159BD6E-535C-43CA-83FD-457543C4421A}"
       DTS:From="Package\Get CET_KH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1866,7 +1866,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
       DTS:CreationName=""
-      DTS:DTSID="{b2104aca-e143-46f6-be30-3a4463faffa8}"
+      DTS:DTSID="{477EFC7B-D57B-4A50-8244-E4FD6C5E7403}"
       DTS:From="Package\Get CET_CTHD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1 1"
@@ -1874,7 +1874,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{02F0BBED-E54A-44AD-8756-2D2F2BD7BDAD}"
+      DTS:DTSID="{83BAC27A-FABC-47D5-A16B-0893212693A2}"
       DTS:From="Package\Get LSET_HD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -1882,7 +1882,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2 1]"
       DTS:CreationName=""
-      DTS:DTSID="{02fb059f-1330-4080-a97b-8a55a4bba0be}"
+      DTS:DTSID="{BA5B800B-50F4-468A-B0FB-E2F6105C5879}"
       DTS:From="Package\Get LSET_KH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2 1"
@@ -1890,7 +1890,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2 1 1]"
       DTS:CreationName=""
-      DTS:DTSID="{61d9c7e2-333e-43f2-9959-2d905e015246}"
+      DTS:DTSID="{01C3F5F0-21CB-433A-A255-5DFA03E83C11}"
       DTS:From="Package\Get LSET_CTHD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2 1 1"
@@ -1898,7 +1898,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{6F143171-BC25-4C0E-9728-F4BD823395C0}"
+      DTS:DTSID="{3AAB7C25-5C60-4B67-8969-1573BBF53B72}"
       DTS:From="Package\Truncate stage_HD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -1906,7 +1906,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3 1]"
       DTS:CreationName=""
-      DTS:DTSID="{94d6afa8-0294-44c8-9200-45f346f825a7}"
+      DTS:DTSID="{1AFCC7FC-03AC-4E6F-9D13-9846B8A5A672}"
       DTS:From="Package\Truncate stage_KH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3 1"
@@ -1914,7 +1914,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3 1 1]"
       DTS:CreationName=""
-      DTS:DTSID="{db51e0cd-73f0-4649-9d85-3c67fd3c97bc}"
+      DTS:DTSID="{859E0348-CF75-4D67-AF57-FA4100ACA120}"
       DTS:From="Package\Truncate stage_CTHD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3 1 1"
@@ -1922,7 +1922,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{BF39B2EB-8872-4529-9A2B-BEF6ECABCDEA}"
+      DTS:DTSID="{1CCB09FB-B0E6-4433-BEC9-96D1BC9F1FCB}"
       DTS:From="Package\HoaDonWebTower Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -1930,7 +1930,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4 1]"
       DTS:CreationName=""
-      DTS:DTSID="{bef3b51c-9e6d-4ae4-9668-ea58301a2bbd}"
+      DTS:DTSID="{E76486B6-5DE2-4865-8C96-2CB0CDE823BA}"
       DTS:From="Package\KH_WebTower Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4 1"
@@ -1938,7 +1938,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4 1 1]"
       DTS:CreationName=""
-      DTS:DTSID="{b11ac15d-84ce-4b2f-bbf5-15e54eef4812}"
+      DTS:DTSID="{290E7C23-9919-46F9-9A5A-397EBCA78F34}"
       DTS:From="Package\CTHD_WebTower Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4 1 1"
@@ -1946,7 +1946,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{0E2A6283-7931-4A57-94D5-F79F705A320C}"
+      DTS:DTSID="{FF20EC67-DF43-443E-BB01-7D110EF752DF}"
       DTS:From="Package\Update LSET_HD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -1954,7 +1954,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{E6043923-60CF-405C-93DE-51F78808C2DB}"
+      DTS:DTSID="{56BAB8D8-D0A4-4D51-B875-87EDB514032F}"
       DTS:From="Package\Update LSET_KH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -1962,7 +1962,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6 1]"
       DTS:CreationName=""
-      DTS:DTSID="{4af27630-cfb3-4cc1-9033-68ec74ca146c}"
+      DTS:DTSID="{FB540874-2581-4FB5-B285-CE25AD9D3B4A}"
       DTS:From="Package\Update LSET_CTHD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6 1"
@@ -1979,7 +1979,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Get CET_CTHD"
@@ -2023,7 +2023,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2045,7 +2047,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2067,7 +2071,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2089,7 +2095,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2111,7 +2119,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -2180,7 +2190,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2202,7 +2214,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2224,7 +2238,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2246,7 +2262,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2268,7 +2286,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -2337,7 +2357,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2359,7 +2381,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2381,7 +2405,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2403,7 +2429,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2425,7 +2453,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt;= ?)) OR ((NgayTao &gt;= ?) AN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
