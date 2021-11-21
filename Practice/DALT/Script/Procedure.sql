@@ -39,6 +39,8 @@ END
 
 go
 
+
+-----UPDATE NDS
 USE NDS_Demo
 
 CREATE TABLE [dbo].[Receipt_NDS] (
@@ -72,6 +74,14 @@ CONSTRAINT FK_Re_Src
 FOREIGN KEY (SourceID)
 REFERENCES dbo.Source_NDS
 
-
-
- 
+CREATE TABLE ReceiptDetail_NDS 
+(
+	Detail_ID INT IDENTITY(1,1) PRIMARY KEY,
+	Detail_NK INT,
+	Receipt_ID INT FOREIGN KEY REFERENCES dbo.Receipt_NDS,
+	Product_ID INT FOREIGN KEY REFERENCES dbo.Product_NDS,
+	Status INT,
+	Source_ID INT FOREIGN KEY REFERENCES dbo.Source_NDS,
+	CreatedDate DATETIME, 
+	UpdateDate DATETIME
+)

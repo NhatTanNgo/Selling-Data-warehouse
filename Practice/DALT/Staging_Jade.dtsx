@@ -1,18 +1,18 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/12/2021 4:19:56 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-0IA21OI"
   DTS:CreatorName="DESKTOP-0IA21OI\NhatTan"
-  DTS:DTSID="{1BEC5D28-264B-4C96-BF23-5DC22CDC479C}"
+  DTS:DTSID="{EA09E7AA-0924-49D8-AF2C-B3D346509F0A}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Staging_Jade"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{07939E43-119E-4467-BB70-59E769F6F518}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{9A40E158-6EE6-452F-A63D-E55D2BBDED8B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -77,7 +77,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -99,7 +99,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -143,7 +143,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -165,7 +165,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -273,8 +273,8 @@
               <connections>
                 <connection
                   refId="Package\HD Staging\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:invalid"
-                  connectionManagerRefId="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:invalid"
+                  connectionManagerID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Stage_DALT]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -432,8 +432,8 @@ Where (NgayBan &gt;= ? AND NgayBan &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
               <connections>
                 <connection
                   refId="Package\HD Staging\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{71862845-CF71-454D-8EAF-3D4B8582212E}:invalid"
-                  connectionManagerRefId="{71862845-CF71-454D-8EAF-3D4B8582212E}:invalid"
+                  connectionManagerID="{71862845-CF71-454D-8EAF-3D4B8582212E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Jade]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -679,8 +679,8 @@ Where (NgayBan &gt;= ? AND NgayBan &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
               <connections>
                 <connection
                   refId="Package\KH Staging\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:invalid"
-                  connectionManagerRefId="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:invalid"
+                  connectionManagerID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Stage_DALT]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -870,8 +870,8 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
               <connections>
                 <connection
                   refId="Package\KH Staging\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{71862845-CF71-454D-8EAF-3D4B8582212E}:invalid"
-                  connectionManagerRefId="{71862845-CF71-454D-8EAF-3D4B8582212E}:invalid"
+                  connectionManagerID="{71862845-CF71-454D-8EAF-3D4B8582212E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Jade]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1125,7 +1125,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_CTHD"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1203,7 +1203,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_HD"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1423,8 +1423,8 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
               <connections>
                 <connection
                   refId="Package\Staging CTHD\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:invalid"
-                  connectionManagerRefId="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:invalid"
+                  connectionManagerID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Stage_DALT]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1568,8 +1568,8 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
               <connections>
                 <connection
                   refId="Package\Staging CTHD\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="{71862845-CF71-454D-8EAF-3D4B8582212E}:invalid"
-                  connectionManagerRefId="{71862845-CF71-454D-8EAF-3D4B8582212E}:invalid"
+                  connectionManagerID="{71862845-CF71-454D-8EAF-3D4B8582212E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.Jade]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1745,7 +1745,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1762,7 +1762,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1796,7 +1796,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1813,7 +1813,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
