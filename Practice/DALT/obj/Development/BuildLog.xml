@@ -2,33 +2,58 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DALT</Name>
-    <LastWriteTime>2021-11-21T08:34:41.2357718Z</LastWriteTime>
+    <LastWriteTime>2021-11-22T09:02:46.5266405Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>NDS.dtsx</Name>
-      <LastWriteTime>2021-11-21T17:31:40.4428354Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>DDS.dtsx</Name>
-      <LastWriteTime>2021-11-16T04:26:53.9863666Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
       <Name>Staging_Jade.dtsx</Name>
-      <LastWriteTime>2021-11-21T08:03:34.2036741Z</LastWriteTime>
+      <LastWriteTime>2021-11-22T06:31:59.5837969Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Staging_Jupiter.dtsx</Name>
-      <LastWriteTime>2021-11-21T08:03:31.1828991Z</LastWriteTime>
+      <LastWriteTime>2021-11-22T06:35:30.9087365Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Staging_WebTower.dtsx</Name>
-      <LastWriteTime>2021-11-21T08:03:26.902436Z</LastWriteTime>
+      <LastWriteTime>2021-11-22T06:37:20.1649044Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Main_Staging.dtsx</Name>
+      <LastWriteTime>2021-11-22T02:28:28.6028175Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>aMain_DDS.dtsx</Name>
+      <LastWriteTime>2021-11-22T07:46:23.6730366Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>aMain_NDS.dtsx</Name>
+      <LastWriteTime>2021-11-22T09:32:26.2953811Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DDS_Store.dtsx</Name>
+      <LastWriteTime>2021-11-22T06:32:10.1728223Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DDS_Product.dtsx</Name>
+      <LastWriteTime>2021-11-22T07:14:44.2216433Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DDS_Customer.dtsx</Name>
+      <LastWriteTime>2021-11-22T07:38:54.1091309Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DDS_Receipt.dtsx</Name>
+      <LastWriteTime>2021-11-22T09:06:06.808698Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

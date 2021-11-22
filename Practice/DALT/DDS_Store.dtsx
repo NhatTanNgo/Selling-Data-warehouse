@@ -1,0 +1,1396 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/22/2021 9:29:30 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-0IA21OI"
+  DTS:CreatorName="DESKTOP-0IA21OI\NhatTan"
+  DTS:DTSID="{C1000150-B5EC-4F1E-A054-6E8D2AE57FCC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{A3CD16C4-CDB6-41B4-B0AB-DF07A2D65795}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E82DFBED-99D9-42C4-81F1-B18DC412A8D5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CETResult">
+      <DTS:VariableValue
+        DTS:DataType="8">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{979594EF-0880-442E-ABDB-5A0E8A59F5DF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSETResult">
+      <DTS:VariableValue
+        DTS:DataType="8">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Get LSET_CET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9D06B2B7-29E8-4FD3-B6F8-59C9D46558ED}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET_CET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7753EA35-6DB7-4217-B8FC-49ADF9109016}"
+          SQLTask:SqlStatementSource="EXEC GET_CET 'DDS_Store'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSETResult" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CETResult" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populating table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A780C621-F465-47A7-ADD7-97658587794D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populating table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Populating table\Get StoreType_Name"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Get StoreType_Name"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[StoreType_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[StoreType_NDS]) [refTable]
+where [refTable].[StoreTypeID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StoreTypeID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreTypeNK" dataType="DT_STR" length="4" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SourceID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StoreTypeName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CreatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Status" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreType]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populating table\Get StoreType_Name.Connections[OleDbConnection]"
+                  connectionManagerID="{41B3BC70-ECEA-4BE8-806E-759D0197542C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.NDS_Demo]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populating table\Get StoreType_Name.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populating table\Get StoreType_Name.Inputs[Lookup Input].Columns[StoreType]"
+                      cachedDataType="i4"
+                      cachedName="StoreType"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreType]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">StoreTypeID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Populating table\Get StoreType_Name.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Match Output].Columns[StoreTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="50"
+                      lineageId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Match Output].Columns[StoreTypeName]"
+                      name="StoreTypeName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">StoreTypeName</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populating table\Get StoreType_Name.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Populating table\Get StoreType_Name.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Populating table\Get StoreType_Name.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populating table\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[CuaHang]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populating table\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{D85BA608-692D-4F2E-AC15-295C98C5E099}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.DDS_DALT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].Columns[StoreID]"
+                      cachedDataType="i4"
+                      cachedName="StoreID"
+                      externalMetadataColumnId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaCH]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreID]" />
+                    <inputColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].Columns[StoreName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StoreName"
+                      externalMetadataColumnId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TenCH]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreName]" />
+                    <inputColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].Columns[StoreType]"
+                      cachedDataType="i4"
+                      cachedName="StoreType"
+                      externalMetadataColumnId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaLoaiCH]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreType]" />
+                    <inputColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].Columns[StoreTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StoreTypeName"
+                      externalMetadataColumnId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TenLoaiCH]"
+                      lineageId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Match Output].Columns[StoreTypeName]" />
+                    <inputColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="i4"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nuoc]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].Columns[SourceID]"
+                      cachedDataType="i4"
+                      cachedName="SourceID"
+                      externalMetadataColumnId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NguonDuLieu]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[SourceID]" />
+                    <inputColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="i4"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[Status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[IDCuaHang]"
+                      dataType="i4"
+                      name="IDCuaHang" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaCH]"
+                      dataType="i4"
+                      name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TenCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenCH" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[MaLoaiCH]"
+                      dataType="i4"
+                      name="MaLoaiCH" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TenLoaiCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenLoaiCH" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nuoc]"
+                      dataType="i4"
+                      name="Nuoc" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NguonDuLieu]"
+                      dataType="i4"
+                      name="NguonDuLieu" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[TrangThai]"
+                      dataType="i4"
+                      name="TrangThai" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populating table\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populating table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populating table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populating table\NDS_Store"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="NDS_Store"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select *
+From Store_NDS
+Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( UpdatedDate &gt;= ? And UpdatedDate &lt;?) )</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{979594EF-0880-442E-ABDB-5A0E8A59F5DF};"Parameter1:Input",{E82DFBED-99D9-42C4-81F1-B18DC412A8D5};"Parameter2:Input",{979594EF-0880-442E-ABDB-5A0E8A59F5DF};"Parameter3:Input",{E82DFBED-99D9-42C4-81F1-B18DC412A8D5};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populating table\NDS_Store.Connections[OleDbConnection]"
+                  connectionManagerID="{41B3BC70-ECEA-4BE8-806E-759D0197542C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.NDS_Demo]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[StoreID]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreID]"
+                      name="StoreID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreNK]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[StoreNK]"
+                      length="4"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreNK]"
+                      name="StoreNK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[SourceID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[SourceID]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[SourceID]"
+                      name="SourceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[StoreName]"
+                      length="50"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreName]"
+                      name="StoreName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreType]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[StoreType]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreType]"
+                      name="StoreType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[Country]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[Status]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[StoreID]"
+                      dataType="i4"
+                      name="StoreID" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[StoreNK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="StoreNK" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[SourceID]"
+                      dataType="i4"
+                      name="SourceID" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[StoreName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StoreName" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[StoreType]"
+                      dataType="i4"
+                      name="StoreType" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      dataType="i4"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      dataType="i4"
+                      name="Status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[StoreID]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[StoreID]"
+                      name="StoreID" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[StoreNK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[StoreNK]"
+                      name="StoreNK" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[SourceID]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[SourceID]"
+                      name="SourceID" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[StoreName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[StoreName]"
+                      name="StoreName" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[StoreType]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[StoreType]"
+                      name="StoreType" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populating table\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[CuaHang] SET [TenCH] = ?,[TenLoaiCH] = ? WHERE [MaCH] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populating table\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{D85BA608-692D-4F2E-AC15-295C98C5E099}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.DDS_DALT]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].Columns[StoreID]"
+                      cachedDataType="i4"
+                      cachedName="StoreID"
+                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreID]" />
+                    <inputColumn
+                      refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].Columns[StoreName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StoreName"
+                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreName]" />
+                    <inputColumn
+                      refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].Columns[StoreTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StoreTypeName"
+                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Match Output].Columns[StoreTypeName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populating table\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populating table\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populating table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populating table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populating table\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populating table\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [MaCH], [TenCH], [TenLoaiCH] FROM [dbo].[CuaHang]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populating table\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{D85BA608-692D-4F2E-AC15-295C98C5E099}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.DDS_DALT]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[StoreID]"
+                      cachedDataType="i4"
+                      cachedName="StoreID"
+                      externalMetadataColumnId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MaCH]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[StoreName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StoreName"
+                      externalMetadataColumnId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TenCH]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[StoreTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StoreTypeName"
+                      externalMetadataColumnId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TenLoaiCH]"
+                      lineageId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Match Output].Columns[StoreTypeName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MaCH]"
+                      dataType="i4"
+                      name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TenCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenCH" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TenLoaiCH]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TenLoaiCH" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populating table\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populating table\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populating table\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populating table\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populating table\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populating table\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populating table.Paths[Changing Attribute Updates Output]"
+              endId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Populating table\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Populating table.Paths[Lookup Match Output]"
+              endId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Lookup Match Output"
+              startId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Populating table.Paths[New Output]"
+              endId="Package\Populating table\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\Populating table\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Populating table.Paths[OLE DB Source Output]"
+              endId="Package\Populating table\Get StoreType_Name.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9B1DC02A-A384-4A7B-82C3-0FB62E337787}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7753EA35-6DB7-4217-B8FC-49ADF9109016}"
+          SQLTask:SqlStatementSource="UPDATE DATA_FLOW&#xA;SET LSET = CET&#xA;WHERE NAME = 'DDS_Store'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4631547A-BF53-4ED9-B1A4-2731B6D0D39E}"
+      DTS:From="Package\Get LSET_CET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Populating table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8CE14FCC-4EF6-43AB-8B72-08B99251EC54}"
+      DTS:From="Package\Populating table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Update LSET" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\Get LSET_CET"
+          TopLeft="46.8749993015081,96.8499982681871" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Populating table"
+          TopLeft="43.7499993480742,179.399996792078" />
+        <NodeLayout
+          Size="140,42.6666666666667"
+          Id="Package\Update LSET"
+          TopLeft="241.874996395782,179.399996792078" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="120.979165991458,139.516664934854">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.8833318572244"
+              Start="0,0"
+              End="0,32.3833318572244">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.3833318572244" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="199.749999348074,200.733330125411">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.1249970477074,0"
+              Start="0,0"
+              End="34.6249970477074,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34.6249970477074,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Populating table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Populating table\OLE DB Command"
+          TopLeft="479.54166295069,20.3500052419307" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Populating table\Insert Destination"
+          TopLeft="220.49999679625,19.0500052651765" />
+        <NodeLayout
+          Size="130.666666666667,42.6666666666667"
+          Id="Package\Populating table\NDS_Store"
+          TopLeft="35.0416698424767,16.5499998024106" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Populating table\Get StoreType_Name"
+          TopLeft="9.12500319443626,136.116666166882" />
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\Populating table\Slowly Changing Dimension"
+          TopLeft="333.833331470688,139.333334611853" />
+        <EdgeLayout
+          Id="Package\Populating table.Paths[OLE DB Source Output]"
+          TopLeft="99.7500031851231,59.2166664690773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76.8999996978045"
+              Start="0,0"
+              End="0,69.3999996978045">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.3999996978045" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating table.Paths[New Output]"
+          TopLeft="404.944442581799,139.333334611853">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-102.444445785549,-77.6166626800099"
+              Start="0,0"
+              End="-102.444445785549,-70.1166626800099">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-27.399914105693" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-27.399914105693"
+                    Point2="0,-31.399914105693"
+                    Point3="-4,-31.399914105693" />
+                  <mssgle:LineSegment
+                    End="-98.444445785549,-31.399914105693" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.444445785549,-31.399914105693"
+                    Point2="-102.444445785549,-31.399914105693"
+                    Point3="-102.444445785549,-35.399914105693" />
+                  <mssgle:LineSegment
+                    End="-102.444445785549,-70.1166626800099" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.3136096115245,-26.399914105693,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating table.Paths[Lookup Match Output]"
+          TopLeft="189.125003194436,159.058333722701">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="144.708328276252,0"
+              Start="0,0"
+              End="137.208328276252,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="137.208328276252,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="20.412777419376,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populating table.Paths[Changing Attribute Updates Output]"
+          TopLeft="472.055553692911,139.333334611853">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.8194425911126,-76.3166627032558"
+              Start="0,0"
+              End="90.8194425911126,-68.8166627032558">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-26.8739975537824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-26.8739975537824"
+                    Point2="0,-30.8739975537824"
+                    Point3="4,-30.8739975537824" />
+                  <mssgle:LineSegment
+                    End="86.8194425911126,-30.8739975537824" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.8194425911126,-30.8739975537824"
+                    Point2="90.8194425911126,-30.8739975537824"
+                    Point3="90.8194425911126,-34.8739975537824" />
+                  <mssgle:LineSegment
+                    End="90.8194425911126,-68.8166627032558" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.1241849544437,-25.8739975537824,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating table\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating table\NDS_Store">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating table\Get StoreType_Name">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[StoreType_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populating table\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{D85BA608-692D-4F2E-AC15-295C98C5E099}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[CuaHang]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;NDS_Store.Outputs[OLE DB Source Output].Columns[StoreID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;MaCH&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;NDS_Store.Outputs[OLE DB Source Output].Columns[StoreType]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;MaLoaiCH&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;NDS_Store.Outputs[OLE DB Source Output].Columns[SourceID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;NguonDuLieu&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;NDS_Store.Outputs[OLE DB Source Output].Columns[Country]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Nuoc&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;NDS_Store.Outputs[OLE DB Source Output].Columns[StoreName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;TenCH&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Get StoreType_Name.Outputs[Lookup Match Output].Columns[StoreTypeName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;TenLoaiCH&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;NDS_Store.Outputs[OLE DB Source Output].Columns[Status]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;TrangThai&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

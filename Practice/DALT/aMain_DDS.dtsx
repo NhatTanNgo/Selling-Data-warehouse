@@ -1,70 +1,106 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="11/22/2021 9:26:44 AM"
+  DTS:CreationDate="11/16/2021 10:59:35 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-0IA21OI"
   DTS:CreatorName="DESKTOP-0IA21OI\NhatTan"
-  DTS:DTSID="{0371D220-425F-4920-95B3-5592E5F006E9}"
+  DTS:DTSID="{47AF0E22-A1D6-4A8D-9FD1-1D0724F30FCB}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="aMain_DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{8FF18372-2DD6-467C-9112-44B16F65CB9B}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{8C4FEE90-748D-41AA-83AE-634610FD4CCA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{03FD02CF-3C45-4A8E-AF04-41F8996A642A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CETResult">
+      <DTS:VariableValue
+        DTS:DataType="8">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E5FB628E-8FB2-4C29-B0FF-64231FCE2DFD}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSETResult">
+      <DTS:VariableValue
+        DTS:DataType="8">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Jade"
+      DTS:refId="Package\Customer"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{BE25730C-1833-4EF9-B313-CAECDA14D317}"
+      DTS:DTSID="{F6E924EC-36A5-45DE-BCB9-1B5E25B46839}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Jade"
+      DTS:ObjectName="Customer"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Staging_Jade.dtsx</PackageName>
+          <PackageName>DDS_Customer.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Jupiter"
+      DTS:refId="Package\Product"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{017A3F88-7FCE-4544-A2BA-03FCB46D566A}"
+      DTS:DTSID="{CA8662F8-6459-4C31-92C7-6221FCBC5006}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Jupiter"
+      DTS:ObjectName="Product"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Staging_Jupiter.dtsx</PackageName>
+          <PackageName>DDS_Product.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\WebTower"
+      DTS:refId="Package\Receipt"
       DTS:CreationName="Microsoft.ExecutePackageTask"
       DTS:Description="Execute Package Task"
-      DTS:DTSID="{ABDDFC0D-3549-4F2D-B24E-DDDCB922913C}"
+      DTS:DTSID="{79A16CED-C4A5-4B3F-B970-0A8541D84EA6}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="WebTower"
+      DTS:ObjectName="Receipt"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Staging_WebTower.dtsx</PackageName>
+          <PackageName>DDS_Receipt.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Store"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{4150E17D-3F34-40C6-8FC9-3E9C3F178044}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Store"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>DDS_Store.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -73,19 +109,27 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{39492357-2090-404A-8E32-7F074A8681F8}"
-      DTS:From="Package\Jade"
+      DTS:DTSID="{974AB520-D4CD-43B1-9E73-CD57D18FC213}"
+      DTS:From="Package\Store"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Jupiter" />
+      DTS:To="Package\Product" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{9D019C7E-B8F9-4AD9-AF17-F998D00E99A8}"
-      DTS:From="Package\Jupiter"
+      DTS:DTSID="{1DBCDBA2-E720-43EB-87B5-13EF719BF5A0}"
+      DTS:From="Package\Product"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\WebTower" />
+      DTS:To="Package\Customer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{1CCAEDD5-67B9-432E-8E54-33A5A26E6E92}"
+      DTS:From="Package\Customer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Receipt" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -100,27 +144,27 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="100.666666666667,42"
-          Id="Package\Jade"
-          TopLeft="92.4999986216426,129.999997675419" />
+          Size="104.666666666667,42.6666666666667"
+          Id="Package\Store"
+          TopLeft="57.4999991431833,87.0999984425307" />
         <NodeLayout
-          Size="112,42.6666666666667"
-          Id="Package\Jupiter"
-          TopLeft="255.624996190891,130.649997663796" />
+          Size="116,42.6666666666667"
+          Id="Package\Product"
+          TopLeft="226.249996628612,90.3499983844161" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="193.166665288309,151.491664336274">
+          TopLeft="162.16666580985,110.058331746807">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="62.4583309025815,0"
+              EndConnector="64.0833308187623,0"
               Start="0,0"
-              End="54.9583309025815,0">
+              End="56.5833308187623,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="54.9583309025815,0" />
+                    End="56.5833308187623,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -130,23 +174,49 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="130.666666666667,42.6666666666667"
-          Id="Package\WebTower"
-          TopLeft="428.12499362044,131.94999764055" />
+          Size="124,42.6666666666667"
+          Id="Package\Customer"
+          TopLeft="226.874996619299,178.749996803701" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="367.624996190891,152.633330985506">
+          TopLeft="286.562496623956,133.016665051083">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.4999974295496,0"
+              EndConnector="0,45.7333317526181"
               Start="0,0"
-              End="52.9999974295496,0">
+              End="0,38.2333317526181">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.9999974295496,0" />
+                    End="0,38.2333317526181" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\Receipt"
+          TopLeft="54.3749991897493,176.79999683857" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="226.874996619299,199.108330154469">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57.8333307628833,0"
+              Start="0,0"
+              End="-50.3333307628833,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-50.3333307628833,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

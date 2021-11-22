@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="LocalHost.DDS_DALT"
-  DTS:DTSID="{F4037EC3-870C-4554-B967-2DEB677886CE}"
+  DTS:DTSID="{D85BA608-692D-4F2E-AC15-295C98C5E099}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager

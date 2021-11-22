@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_Jupiter"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{63ACA876-747D-4C7C-8367-29D0422D4BE0}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{7D497903-DD8D-40F1-A561-1EBA1091A968}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -303,7 +303,7 @@
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
 FROM CuaHang_Jupiter
-Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt;= ?)</property>
+Where (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -805,7 +805,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_CH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -827,7 +827,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_LCH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -849,7 +849,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_LSP"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -871,7 +871,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_Nuoc"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -893,7 +893,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CET_SP"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -915,7 +915,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_CH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -937,7 +937,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_LCH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -959,7 +959,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_LSP"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -981,7 +981,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_Nuoc"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1003,7 +1003,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET_SP"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1199,7 +1199,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
 FROM LoaiCuaHang_Jupiter
-Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt;= ?)</property>
+Where (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1581,7 +1581,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_CH"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1659,7 +1659,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_LCH"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1737,7 +1737,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_LSP"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1815,7 +1815,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_Nuoc"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1893,7 +1893,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_SP"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -2147,7 +2147,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
 FROM LoaiSanPham_Jupiter
-Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt;= ?)</property>
+Where (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2709,7 +2709,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
 FROM Nuoc_Jupiter
-Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt;= ?)</property>
+Where (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhat &gt;= ? AND NgayCapNhat &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3291,7 +3291,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhat &gt;= ? AND NgayCapN
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
 FROM SanPham_Jupiter
-Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapNhap &lt;= ?)</property>
+Where (NgayTao &gt;= ? AND NgayTao &lt; ?) OR (NgayCapNhap &gt;= ? AND NgayCapNhap &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3777,7 +3777,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_CH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3794,7 +3794,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_LCH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3811,7 +3811,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_LSP"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3828,7 +3828,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_Nuoc"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3845,7 +3845,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_SP"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3862,7 +3862,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_CH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3879,7 +3879,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_LCH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3896,7 +3896,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_LSP"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3913,7 +3913,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_Nuoc"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3930,7 +3930,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_SP"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4152,7 +4152,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\Get CET_CH"
@@ -4196,9 +4196,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4220,9 +4218,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4244,9 +4240,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4268,9 +4262,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4292,9 +4284,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -4363,9 +4353,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4387,9 +4375,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4411,9 +4397,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4435,9 +4419,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4459,9 +4441,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -4530,9 +4510,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4554,9 +4532,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4578,9 +4554,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4602,9 +4576,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4626,9 +4598,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -4639,7 +4609,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
           PanelSize="217.333333333334,460"
           Size="106,42.6666666666667"
           Id="f831725c-3364-4245-8963-6efe9b5eb1df"
-          TopLeft="646.249991264194,60.1833385752637">
+          TopLeft="529.999992996454,58.2333386101324">
           <GroupLayout.ChildrenIds>
             <s:String>Package\Get CET_LSP</s:String>
             <s:String>Package\Get LSET_LSP</s:String>
@@ -4697,9 +4667,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4721,9 +4689,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4745,9 +4711,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4769,9 +4733,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4793,9 +4755,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -4864,9 +4824,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4888,9 +4846,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4912,9 +4868,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4936,9 +4890,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4960,9 +4912,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -4971,7 +4921,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
           HeaderHeight="43"
           IsExpanded="False"
           PanelSize="217.333333333334,460"
-          Size="217.333333333334,42.6666666666667"
+          Size="82,42.6666666666667"
           Id="660c789d-fff6-4af3-b05c-966ac55b5fea"
           TopLeft="409.374994793907,58.8166756046806">
           <GroupLayout.ChildrenIds>
@@ -4995,7 +4945,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
     design-time-name="Package\CH Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="98.6666666666667,42.6666666666667"
           Id="Package\CH Staging\Sort"
@@ -5039,9 +4989,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5075,9 +5023,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5108,22 +5054,22 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
     design-time-name="Package\LCH Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="98.6666666666667,42.6666666666667"
           Id="Package\LCH Staging\Sort"
-          TopLeft="267,203" />
+          TopLeft="238.333333333333,141" />
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\LCH Staging\OLE DB Source"
-          TopLeft="89.6249987240881,75.399998651743" />
+          TopLeft="60.9583320574214,13.399998651743" />
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\LCH Staging\OLE DB Destination"
-          TopLeft="419.999993741512,75.3999986517429" />
+          TopLeft="391.333327074845,13.3999986517429" />
         <EdgeLayout
           Id="Package\LCH Staging.Paths[Sort Output]"
-          TopLeft="331.444444444444,203">
+          TopLeft="302.777777777777,141">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5152,14 +5098,12 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\LCH Staging.Paths[OLE DB Source Output]"
-          TopLeft="164.958332057421,118.06666531841">
+          TopLeft="136.291665390754,56.06666531841">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5188,9 +5132,7 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5332,6 +5274,10 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Staging Nuoc\Sort"
+          TopLeft="276.249995883554,177.449996826947" />
+        <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Staging Nuoc\OLE DB Source"
           TopLeft="89.6249987240881,75.399998651743" />
@@ -5339,44 +5285,6 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
           Size="172,42.6666666666667"
           Id="Package\Staging Nuoc\OLE DB Destination"
           TopLeft="419.999993741512,75.3999986517429" />
-        <NodeLayout
-          Size="98.6666666666667,42.6666666666667"
-          Id="Package\Staging Nuoc\Sort"
-          TopLeft="276.249995883554,177.449996826947" />
-        <EdgeLayout
-          Id="Package\Staging Nuoc.Paths[OLE DB Source Output]"
-          TopLeft="164.958332057421,118.06666531841">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="160.624997159466,59.3833315085371"
-              Start="0,0"
-              End="160.624997159466,51.8833315085371">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.6916657542686" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.6916657542686"
-                    Point2="0,29.6916657542686"
-                    Point3="4,29.6916657542686" />
-                  <mssgle:LineSegment
-                    End="156.624997159466,29.6916657542686" />
-                  <mssgle:CubicBezierSegment
-                    Point1="156.624997159466,29.6916657542686"
-                    Point2="160.624997159466,29.6916657542686"
-                    Point3="160.624997159466,33.6916657542686" />
-                  <mssgle:LineSegment
-                    End="160.624997159466,51.8833315085371" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Staging Nuoc.Paths[Sort Output]"
           TopLeft="340.694440327999,177.449996826947">
@@ -5403,6 +5311,40 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
                     Point3="165.305553413513,-28.3218964157307" />
                   <mssgle:LineSegment
                     End="165.305553413513,-51.8833315085372" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging Nuoc.Paths[OLE DB Source Output]"
+          TopLeft="164.958332057421,118.06666531841">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="160.624997159466,59.3833315085371"
+              Start="0,0"
+              End="160.624997159466,51.8833315085371">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6916657542686" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6916657542686"
+                    Point2="0,29.6916657542686"
+                    Point3="4,29.6916657542686" />
+                  <mssgle:LineSegment
+                    End="156.624997159466,29.6916657542686" />
+                  <mssgle:CubicBezierSegment
+                    Point1="156.624997159466,29.6916657542686"
+                    Point2="160.624997159466,29.6916657542686"
+                    Point3="160.624997159466,33.6916657542686" />
+                  <mssgle:LineSegment
+                    End="160.624997159466,51.8833315085371" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5441,51 +5383,17 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Staging SP\OLE DB Source"
-          TopLeft="89.6249987240881,75.399998651743" />
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Staging SP\Sort"
+          TopLeft="244,164" />
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\Staging SP\OLE DB Destination"
           TopLeft="419.999993741512,75.3999986517429" />
         <NodeLayout
-          Size="98.6666666666667,42.6666666666667"
-          Id="Package\Staging SP\Sort"
-          TopLeft="244,164" />
-        <EdgeLayout
-          Id="Package\Staging SP.Paths[OLE DB Source Output]"
-          TopLeft="164.958332057421,118.06666531841">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="128.375001275912,45.9333346815903"
-              Start="0,0"
-              End="128.375001275912,38.4333346815903">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.9666673407952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.9666673407952"
-                    Point2="0,22.9666673407952"
-                    Point3="4,22.9666673407952" />
-                  <mssgle:LineSegment
-                    End="124.375001275912,22.9666673407952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="124.375001275912,22.9666673407952"
-                    Point2="128.375001275912,22.9666673407952"
-                    Point3="128.375001275912,26.9666673407952" />
-                  <mssgle:LineSegment
-                    End="128.375001275912,38.4333346815903" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Staging SP\OLE DB Source"
+          TopLeft="89.6249987240881,75.399998651743" />
         <EdgeLayout
           Id="Package\Staging SP.Paths[Sort Output]"
           TopLeft="308.444444444444,164">
@@ -5512,6 +5420,40 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;= ?) OR (NgayCapNhap &gt;= ? AND NgayCapN
                     Point3="197.555549297068,-22.8131211195876" />
                   <mssgle:LineSegment
                     End="197.555549297068,-38.4333346815904" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Staging SP.Paths[OLE DB Source Output]"
+          TopLeft="164.958332057421,118.06666531841">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.375001275912,45.9333346815903"
+              Start="0,0"
+              End="128.375001275912,38.4333346815903">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.9666673407952" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.9666673407952"
+                    Point2="0,22.9666673407952"
+                    Point3="4,22.9666673407952" />
+                  <mssgle:LineSegment
+                    End="124.375001275912,22.9666673407952" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.375001275912,22.9666673407952"
+                    Point2="128.375001275912,22.9666673407952"
+                    Point3="128.375001275912,26.9666673407952" />
+                  <mssgle:LineSegment
+                    End="128.375001275912,38.4333346815903" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
