@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="aMain_NDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{AC93E88E-6F05-46E9-9F77-263097CF65F8}">
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{E91635B4-E184-4F32-949C-AFD00C84B7E0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -324,11 +324,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Country\OLE DB Source"
+              refId="Package\Country\Jupiter_Nuoc"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="Jupiter_Nuoc"
               usesDispositions="true"
               version="7">
               <properties>
@@ -373,7 +373,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Country\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Country\Jupiter_Nuoc.Connections[OleDbConnection]"
                   connectionManagerID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:external"
                   connectionManagerRefId="Project.ConnectionManagers[LocalHost.Stage_DALT]"
                   description="The OLE DB runtime connection used to access the database."
@@ -381,95 +381,95 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaNuoc]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[MaNuoc]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaNuoc]"
+                      externalMetadataColumnId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].ExternalColumns[MaNuoc]"
                       length="4"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaNuoc]"
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[MaNuoc]"
                       name="MaNuoc"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenNuoc]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TenNuoc]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TenNuoc]"
+                      externalMetadataColumnId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].ExternalColumns[TenNuoc]"
                       length="50"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenNuoc]"
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TenNuoc]"
                       name="TenNuoc"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TrangThai]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      externalMetadataColumnId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TrangThai]"
                       name="TrangThai"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaNuoc]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].ExternalColumns[MaNuoc]"
                       codePage="1252"
                       dataType="str"
                       length="4"
                       name="MaNuoc" />
                     <externalMetadataColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TenNuoc]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].ExternalColumns[TenNuoc]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="TenNuoc" />
                     <externalMetadataColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
                       dataType="i4"
                       name="TrangThai" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaNuoc]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[MaNuoc]"
                       codePage="1252"
                       dataType="str"
                       length="4"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaNuoc]"
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[MaNuoc]"
                       name="MaNuoc" />
                     <outputColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TenNuoc]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[TenNuoc]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TenNuoc]"
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[TenNuoc]"
                       name="TenNuoc" />
                     <outputColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
                       dataType="i4"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
                       name="TrangThai" />
                     <outputColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -570,7 +570,7 @@
                       cachedName="TrangThai"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TrangThai]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -692,7 +692,7 @@
                       cachedLength="50"
                       cachedName="TenNuoc"
                       externalMetadataColumnId="Package\Country\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryName]"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenNuoc]">
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TenNuoc]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -707,7 +707,7 @@
                       cachedLength="4"
                       cachedName="MaNuoc"
                       externalMetadataColumnId="Package\Country\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CountryNK]"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaNuoc]">
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[MaNuoc]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -806,7 +806,7 @@
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaNuoc"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaNuoc]">
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[MaNuoc]">
                       <properties>
                         <property
                           containsID="true"
@@ -821,7 +821,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="TenNuoc"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenNuoc]">
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TenNuoc]">
                       <properties>
                         <property
                           containsID="true"
@@ -834,7 +834,7 @@
                       refId="Package\Country\Union All.Inputs[Union All Input 1].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]">
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TrangThai]">
                       <properties>
                         <property
                           containsID="true"
@@ -896,7 +896,7 @@
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaNuoc"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaNuoc]">
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[MaNuoc]">
                       <properties>
                         <property
                           containsID="true"
@@ -911,7 +911,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="TenNuoc"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenNuoc]">
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TenNuoc]">
                       <properties>
                         <property
                           containsID="true"
@@ -924,7 +924,7 @@
                       refId="Package\Country\Union All.Inputs[Union All Input 2].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]">
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TrangThai]">
                       <properties>
                         <property
                           containsID="true"
@@ -1074,13 +1074,13 @@
                       cachedLength="4"
                       cachedName="MaNuoc"
                       externalMetadataColumnId="Package\Country\UpdatedRow.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaNuoc]" />
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[MaNuoc]" />
                     <inputColumn
                       refId="Package\Country\UpdatedRow.Inputs[OLE DB Command Input].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
                       externalMetadataColumnId="Package\Country\UpdatedRow.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                      lineageId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output].Columns[TrangThai]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1179,7 +1179,7 @@
               refId="Package\Country.Paths[OLE DB Source Output]"
               endId="Package\Country\Add srcID, create, update time.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Country\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Country\Jupiter_Nuoc.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Country.Paths[Union All Output 1]"
               endId="Package\Country\Set new status.Inputs[Derived Column Input]"
@@ -7583,7 +7583,7 @@ WHERE STATUS = 1</property>
                       cachedName="TrangThai"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TrangThai]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -7814,11 +7814,11 @@ WHERE STATUS = 1</property>
               </outputs>
             </component>
             <component
-              refId="Package\ProductType\OLE DB Source"
+              refId="Package\ProductType\Jupiter_LoaiSP"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="Jupiter_LoaiSP"
               usesDispositions="true"
               version="7">
               <properties>
@@ -7863,7 +7863,7 @@ WHERE STATUS = 1</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\ProductType\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\ProductType\Jupiter_LoaiSP.Connections[OleDbConnection]"
                   connectionManagerID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:external"
                   connectionManagerRefId="Project.ConnectionManagers[LocalHost.Stage_DALT]"
                   description="The OLE DB runtime connection used to access the database."
@@ -7871,55 +7871,55 @@ WHERE STATUS = 1</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TrangThai]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      externalMetadataColumnId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TrangThai]"
                       name="TrangThai"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiSP]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[MaLoaiSP]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiSP]"
+                      externalMetadataColumnId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiSP]"
                       length="4"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiSP]"
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[MaLoaiSP]"
                       name="MaLoaiSP"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiSP]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TenLoaiSP]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TenLoaiSP]"
+                      externalMetadataColumnId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].ExternalColumns[TenLoaiSP]"
                       length="50"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiSP]"
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TenLoaiSP]"
                       name="TenLoaiSP"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
                       dataType="i4"
                       name="TrangThai" />
                     <externalMetadataColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiSP]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiSP]"
                       codePage="1252"
                       dataType="str"
                       length="4"
                       name="MaLoaiSP" />
                     <externalMetadataColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TenLoaiSP]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].ExternalColumns[TenLoaiSP]"
                       codePage="1252"
                       dataType="str"
                       length="50"
@@ -7927,39 +7927,39 @@ WHERE STATUS = 1</property>
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaLoaiSP]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[MaLoaiSP]"
                       codePage="1252"
                       dataType="str"
                       length="4"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaLoaiSP]"
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[MaLoaiSP]"
                       name="MaLoaiSP" />
                     <outputColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TenLoaiSP]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[TenLoaiSP]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TenLoaiSP]"
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[TenLoaiSP]"
                       name="TenLoaiSP" />
                     <outputColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
                       dataType="i4"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
                       name="TrangThai" />
                     <outputColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -8034,7 +8034,7 @@ WHERE STATUS = 1</property>
                       cachedLength="50"
                       cachedName="TenLoaiSP"
                       externalMetadataColumnId="Package\ProductType\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductTypeName]"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiSP]">
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TenLoaiSP]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -8049,7 +8049,7 @@ WHERE STATUS = 1</property>
                       cachedLength="4"
                       cachedName="MaLoaiSP"
                       externalMetadataColumnId="Package\ProductType\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductTypeNK]"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiSP]">
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[MaLoaiSP]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -8283,7 +8283,7 @@ WHERE STATUS = 1</property>
                       refId="Package\ProductType\Union All.Inputs[Union All Input 1].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]">
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TrangThai]">
                       <properties>
                         <property
                           containsID="true"
@@ -8298,7 +8298,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaLoaiSP"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiSP]">
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[MaLoaiSP]">
                       <properties>
                         <property
                           containsID="true"
@@ -8313,7 +8313,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="TenLoaiSP"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiSP]">
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TenLoaiSP]">
                       <properties>
                         <property
                           containsID="true"
@@ -8347,7 +8347,7 @@ WHERE STATUS = 1</property>
                       refId="Package\ProductType\Union All.Inputs[Union All Input 2].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]">
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TrangThai]">
                       <properties>
                         <property
                           containsID="true"
@@ -8362,7 +8362,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaLoaiSP"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiSP]">
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[MaLoaiSP]">
                       <properties>
                         <property
                           containsID="true"
@@ -8377,7 +8377,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="TenLoaiSP"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiSP]">
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[TenLoaiSP]">
                       <properties>
                         <property
                           containsID="true"
@@ -8499,7 +8499,7 @@ WHERE [ProductTypeNK] = ? AND [Status] = '1'</property>
                       cachedLength="4"
                       cachedName="MaLoaiSP"
                       externalMetadataColumnId="Package\ProductType\Update status.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiSP]" />
+                      lineageId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output].Columns[MaLoaiSP]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -8598,7 +8598,7 @@ WHERE [ProductTypeNK] = ? AND [Status] = '1'</property>
               refId="Package\ProductType.Paths[OLE DB Source Output]"
               endId="Package\ProductType\Add src ID, create, update time.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\ProductType\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\ProductType\Jupiter_LoaiSP.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\ProductType.Paths[Union All Output 1]"
               endId="Package\ProductType\Timestamps.Inputs[Derived Column Input]"
@@ -12729,49 +12729,49 @@ WHERE [ReceiptNK] = ?</property>
               startId="Package\Receipt\Slowly Changing Dimension.Outputs[New Output]" />
             <path
               refId="Package\Receipt.Paths[OLE DB Source Output3]"
-              endId="Package\Receipt\NDS_CusID_sort.Inputs[Sort Input]"
-              name="OLE DB Source Output"
-              startId="Package\Receipt\NDS_Cus_ID.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Receipt.Paths[OLE DB Source Output2]"
-              endId="Package\Receipt\SrcID_Jade.Inputs[Derived Column Input]"
-              name="OLE DB Source Output"
-              startId="Package\Receipt\HD_Jade.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Receipt.Paths[OLE DB Source Output]"
-              endId="Package\Receipt\SrcID_WT.Inputs[Derived Column Input]"
-              name="OLE DB Source Output"
-              startId="Package\Receipt\HD_WebTower.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Receipt.Paths[OLE DB Source Output1]"
               endId="Package\Receipt\NDS_StoreID_sort.Inputs[Sort Input]"
               name="OLE DB Source Output"
               startId="Package\Receipt\NDS_StoreID.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\Receipt.Paths[OLE DB Source Output2]"
+              endId="Package\Receipt\SrcID_WT.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Receipt\HD_WebTower.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Receipt.Paths[OLE DB Source Output]"
+              endId="Package\Receipt\NDS_CusID_sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Receipt\NDS_Cus_ID.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Receipt.Paths[OLE DB Source Output1]"
+              endId="Package\Receipt\SrcID_Jade.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Receipt\HD_Jade.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\Receipt.Paths[Sort Output4]"
+              endId="Package\Receipt\Get_storeID.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Receipt\StoreID_sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Receipt.Paths[Sort Output]"
               endId="Package\Receipt\Get_storeID.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Receipt\NDS_StoreID_sort.Outputs[Sort Output]" />
             <path
-              refId="Package\Receipt.Paths[Sort Output]"
+              refId="Package\Receipt.Paths[Sort Output1]"
               endId="Package\Receipt\Get_Cus_ID.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Receipt\CusID_sort.Outputs[Sort Output]" />
             <path
-              refId="Package\Receipt.Paths[Sort Output1]"
+              refId="Package\Receipt.Paths[Sort Output2]"
               endId="Package\Receipt\Merge.Inputs[Merge Input 2]"
               name="Sort Output"
               startId="Package\Receipt\Jade_sort.Outputs[Sort Output]" />
             <path
-              refId="Package\Receipt.Paths[Sort Output2]"
+              refId="Package\Receipt.Paths[Sort Output3]"
               endId="Package\Receipt\Merge.Inputs[Merge Input 1]"
               name="Sort Output"
               startId="Package\Receipt\WT_sort.Outputs[Sort Output]" />
-            <path
-              refId="Package\Receipt.Paths[Sort Output3]"
-              endId="Package\Receipt\Get_storeID.Inputs[Merge Join Left Input]"
-              name="Sort Output"
-              startId="Package\Receipt\StoreID_sort.Outputs[Sort Output]" />
             <path
               refId="Package\Receipt.Paths[Sort Output5]"
               endId="Package\Receipt\Get_Cus_ID.Inputs[Merge Join Right Input]"
@@ -19120,11 +19120,11 @@ WHERE STATUS = 1</property>
               </outputs>
             </component>
             <component
-              refId="Package\StoreType\OLE DB Source"
+              refId="Package\StoreType\Jupiter_LCH"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="Jupiter_LCH"
               usesDispositions="true"
               version="7">
               <properties>
@@ -19169,7 +19169,7 @@ WHERE STATUS = 1</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\StoreType\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\StoreType\Jupiter_LCH.Connections[OleDbConnection]"
                   connectionManagerID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}:external"
                   connectionManagerRefId="Project.ConnectionManagers[LocalHost.Stage_DALT]"
                   description="The OLE DB runtime connection used to access the database."
@@ -19177,95 +19177,95 @@ WHERE STATUS = 1</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiCH]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[MaLoaiCH]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiCH]"
+                      externalMetadataColumnId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiCH]"
                       length="4"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiCH]"
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[MaLoaiCH]"
                       name="MaLoaiCH"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiCH]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TenLoaiCH]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TenLoaiCH]"
+                      externalMetadataColumnId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].ExternalColumns[TenLoaiCH]"
                       length="50"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiCH]"
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TenLoaiCH]"
                       name="TenLoaiCH"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TrangThai]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      externalMetadataColumnId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TrangThai]"
                       name="TrangThai"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiCH]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].ExternalColumns[MaLoaiCH]"
                       codePage="1252"
                       dataType="str"
                       length="4"
                       name="MaLoaiCH" />
                     <externalMetadataColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TenLoaiCH]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].ExternalColumns[TenLoaiCH]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="TenLoaiCH" />
                     <externalMetadataColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].ExternalColumns[TrangThai]"
                       dataType="i4"
                       name="TrangThai" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaLoaiCH]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[MaLoaiCH]"
                       codePage="1252"
                       dataType="str"
                       length="4"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaLoaiCH]"
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[MaLoaiCH]"
                       name="MaLoaiCH" />
                     <outputColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TenLoaiCH]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[TenLoaiCH]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TenLoaiCH]"
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[TenLoaiCH]"
                       name="TenLoaiCH" />
                     <outputColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
                       dataType="i4"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[TrangThai]"
                       name="TrangThai" />
                     <outputColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -19366,7 +19366,7 @@ WHERE STATUS = 1</property>
                       cachedName="TrangThai"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]"
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TrangThai]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -19501,7 +19501,7 @@ WHERE STATUS = 1</property>
                       cachedLength="50"
                       cachedName="TenLoaiCH"
                       externalMetadataColumnId="Package\StoreType\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StoreTypeName]"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiCH]">
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TenLoaiCH]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -19516,7 +19516,7 @@ WHERE STATUS = 1</property>
                       cachedLength="4"
                       cachedName="MaLoaiCH"
                       externalMetadataColumnId="Package\StoreType\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StoreTypeNK]"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiCH]">
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[MaLoaiCH]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -19619,7 +19619,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaLoaiCH"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiCH]">
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[MaLoaiCH]">
                       <properties>
                         <property
                           containsID="true"
@@ -19634,7 +19634,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="TenLoaiCH"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiCH]">
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TenLoaiCH]">
                       <properties>
                         <property
                           containsID="true"
@@ -19647,7 +19647,7 @@ WHERE STATUS = 1</property>
                       refId="Package\StoreType\Union All.Inputs[Union All Input 1].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]">
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TrangThai]">
                       <properties>
                         <property
                           containsID="true"
@@ -19709,7 +19709,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="MaLoaiCH"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiCH]">
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[MaLoaiCH]">
                       <properties>
                         <property
                           containsID="true"
@@ -19724,7 +19724,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="TenLoaiCH"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TenLoaiCH]">
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TenLoaiCH]">
                       <properties>
                         <property
                           containsID="true"
@@ -19737,7 +19737,7 @@ WHERE STATUS = 1</property>
                       refId="Package\StoreType\Union All.Inputs[Union All Input 2].Columns[TrangThai]"
                       cachedDataType="i4"
                       cachedName="TrangThai"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]">
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TrangThai]">
                       <properties>
                         <property
                           containsID="true"
@@ -19885,7 +19885,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="i4"
                       cachedName="TrangThai"
                       externalMetadataColumnId="Package\StoreType\UpdateRow.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[TrangThai]" />
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[TrangThai]" />
                     <inputColumn
                       refId="Package\StoreType\UpdateRow.Inputs[OLE DB Command Input].Columns[MaLoaiCH]"
                       cachedCodepage="1252"
@@ -19893,7 +19893,7 @@ WHERE STATUS = 1</property>
                       cachedLength="4"
                       cachedName="MaLoaiCH"
                       externalMetadataColumnId="Package\StoreType\UpdateRow.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaLoaiCH]" />
+                      lineageId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output].Columns[MaLoaiCH]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -19992,7 +19992,7 @@ WHERE STATUS = 1</property>
               refId="Package\StoreType.Paths[OLE DB Source Output]"
               endId="Package\StoreType\Add Src id, timestamps.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\StoreType\OLE DB Source.Outputs[OLE DB Source Output]" />
+              startId="Package\StoreType\Jupiter_LCH.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\StoreType.Paths[Union All Output 1]"
               endId="Package\StoreType\Set new status.Inputs[Derived Column Input]"
@@ -20272,8 +20272,8 @@ WHERE STATUS = 1</property>
           Id="Package\Country\UpdatedRow"
           TopLeft="67.9285714285715,172.309523809524" />
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Country\OLE DB Source"
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\Country\Jupiter_Nuoc"
           TopLeft="56.0714285714286,9.21428571428564" />
         <NodeLayout
           Size="177.333333333334,42.6666666666667"
@@ -20366,9 +20366,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20390,9 +20388,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20414,9 +20410,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20438,33 +20432,29 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Country.Paths[OLE DB Source Output]"
-          TopLeft="206.738095238095,29.5238095238094">
+          TopLeft="197.404761904762,29.5238095238094">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="232.095238095238,0"
+              EndConnector="241.428571428571,0"
               Start="0,0"
-              End="224.595238095238,0">
+              End="233.928571428571,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="224.595238095238,0" />
+                    End="233.928571428571,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20486,16 +20476,14 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Country\OLE DB Source">
+    design-time-name="Package\Country\Jupiter_Nuoc">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -20689,9 +20677,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20749,9 +20735,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20773,9 +20757,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20797,9 +20779,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20821,9 +20801,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20845,9 +20823,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20869,9 +20845,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20893,9 +20867,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20917,9 +20889,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20941,9 +20911,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20965,9 +20933,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20989,9 +20955,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21013,9 +20977,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21037,9 +20999,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -21079,69 +21039,81 @@ WHERE STATUS = 1</property>
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\Product\NDS_Product_type"
-          TopLeft="10.5,19.1666666666664" />
+          TopLeft="187.5,26.1666666666664" />
         <NodeLayout
           Size="133.333333333334,42.6666666666667"
           Id="Package\Product\UpdateRow"
-          TopLeft="534.5,60.1666666666658" />
+          TopLeft="507,30.3333333333325" />
         <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\Product\Slowly Changing Dimension"
-          TopLeft="234.833333333333,284.833333333332" />
+          TopLeft="411.833333333333,291.833333333332" />
         <NodeLayout
           Size="134,42.6666666666667"
           Id="Package\Product\Get_PrType"
-          TopLeft="29.5,195.499999999999" />
+          TopLeft="206.5,202.499999999999" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Product\Insert Destination"
-          TopLeft="737.166666666667,166.333333333333" />
+          TopLeft="767.166666666667,84.333333333333" />
         <NodeLayout
           Size="145.333333333334,42.6666666666667"
           Id="Package\Product\SetNewStatus"
-          TopLeft="742.833333333333,284.833333333333" />
+          TopLeft="777.833333333333,174.833333333333" />
         <NodeLayout
           Size="153.333333333334,42.6666666666667"
           Id="Package\Product\Jupiter_Product"
-          TopLeft="227.833333333333,18.4999999999999" />
+          TopLeft="10.833333333333,28.4999999999999" />
         <NodeLayout
           Size="121.333333333334,42.6666666666667"
           Id="Package\Product\Union All"
-          TopLeft="561,284.499999999999" />
+          TopLeft="717,290.499999999999" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Product\Add timestamps"
-          TopLeft="26.1666666666667,283.166666666666" />
+          TopLeft="203.166666666667,290.166666666666" />
         <NodeLayout
           Size="177.333333333334,42.6666666666667"
           Id="Package\Product\Set status to expired"
-          TopLeft="408.166666666667,190.166666666666" />
+          TopLeft="400,155.833333333333" />
         <NodeLayout
           Size="146.666666666667,42.6666666666667"
           Id="Package\Product\PrType_J_sort"
-          TopLeft="236.166666666667,189.833333333333" />
+          TopLeft="19.166666666667,203.833333333333" />
         <NodeLayout
           Size="162.666666666667,42"
           Id="Package\Product\PrType_NDS_sort"
-          TopLeft="13.1666666666667,93.1666666666663" />
+          TopLeft="190.166666666667,100.166666666666" />
         <NodeLayout
           Size="126.666666666667,42.6666666666667"
           Id="Package\Product\Add SrcID"
-          TopLeft="241.166666666667,108.166666666666" />
+          TopLeft="25.1666666666669,105.166666666666" />
         <EdgeLayout
           Id="Package\Product.Paths[Union All Output 1]"
-          TopLeft="682.333333333333,305.999999999999">
+          TopLeft="796.555555555556,290.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.4999999999997,0"
+              EndConnector="53.9444444444441,-72.9999999999993"
               Start="0,0"
-              End="52.9999999999997,0">
+              End="53.9444444444441,-65.4999999999993">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.9999999999997,0" />
+                    End="0,-25.7700650759216" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-25.7700650759216"
+                    Point2="0,-29.7700650759216"
+                    Point3="4,-29.7700650759216" />
+                  <mssgle:LineSegment
+                    End="49.9444444444441,-29.7700650759216" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.9444444444441,-29.7700650759216"
+                    Point2="53.9444444444441,-29.7700650759216"
+                    Point3="53.9444444444441,-33.7700650759216" />
+                  <mssgle:LineSegment
+                    End="53.9444444444441,-65.4999999999993" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21152,7 +21124,7 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[Sort Output1]"
-          TopLeft="95.5,135.166666666666">
+          TopLeft="272.5,142.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21174,18 +21146,18 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[Sort Output]"
-          TopLeft="236.166666666667,214">
+          TopLeft="165.833333333334,224.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-72.6666666666667,0"
+              EndConnector="40.6666666666664,0"
               Start="0,0"
-              End="-65.1666666666667,0">
+              End="33.1666666666664,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-65.1666666666667,0" />
+                    End="33.1666666666664,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21196,7 +21168,7 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[OLE DB Source Output1]"
-          TopLeft="94.5,61.8333333333331">
+          TopLeft="271.5,68.8333333333331">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21218,18 +21190,18 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[OLE DB Source Output]"
-          TopLeft="304.5,61.1666666666666">
+          TopLeft="88,71.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.9999999999999"
+              EndConnector="0,33.9999999999994"
               Start="0,0"
-              End="0,39.4999999999999">
+              End="0,26.4999999999994">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.4999999999999" />
+                    End="0,26.4999999999994" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21240,18 +21212,30 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[OLE DB Command Output]"
-          TopLeft="621.861111111111,102.833333333332">
+          TopLeft="594.555555555555,72.9999999999991">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,181.666666666667"
+              EndConnector="164.222222222223,217.5"
               Start="0,0"
-              End="0,174.166666666667">
+              End="164.222222222223,210">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,174.166666666667" />
+                    End="0,104.593591860651" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,104.593591860651"
+                    Point2="0,108.593591860651"
+                    Point3="4,108.593591860651" />
+                  <mssgle:LineSegment
+                    End="160.222222222223,108.593591860651" />
+                  <mssgle:CubicBezierSegment
+                    Point1="160.222222222223,108.593591860651"
+                    Point2="164.222222222223,108.593591860651"
+                    Point3="164.222222222223,112.593591860651" />
+                  <mssgle:LineSegment
+                    End="164.222222222223,210" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21262,31 +21246,31 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[New Output]"
-          TopLeft="444.166666666667,305.999999999999">
+          TopLeft="621.166666666666,312.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="116.833333333333,0"
+              EndConnector="95.8333333333337,0"
               Start="0,0"
-              End="109.333333333333,0">
+              End="88.3333333333337,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="109.333333333333,0" />
+                    End="88.3333333333337,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="27.5752799479165,5,54.1827734375,11.43359375"
+              BoundingBox="17.0752799479169,5,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[Merge Join Output]"
-          TopLeft="100,238.166666666666">
+          TopLeft="277,245.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21308,54 +21292,54 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[Historical Attribute Inserts Output]"
-          TopLeft="339.5,284.833333333332">
+          TopLeft="516.5,291.833333333332">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="157.333333333334,-51.9999999999994"
+              EndConnector="-27.8333333333329,-93.3333333333327"
               Start="0,0"
-              End="157.333333333334,-44.4999999999994">
+              End="-27.8333333333329,-85.8333333333327">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-21.9999999999997" />
+                    End="0,-42.6666666666664" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-21.9999999999997"
-                    Point2="0,-25.9999999999997"
-                    Point3="4,-25.9999999999997" />
+                    Point1="0,-42.6666666666664"
+                    Point2="0,-46.6666666666664"
+                    Point3="-4,-46.6666666666664" />
                   <mssgle:LineSegment
-                    End="153.333333333334,-25.9999999999997" />
+                    End="-23.8333333333329,-46.6666666666664" />
                   <mssgle:CubicBezierSegment
-                    Point1="153.333333333334,-25.9999999999997"
-                    Point2="157.333333333334,-25.9999999999997"
-                    Point3="157.333333333334,-29.9999999999997" />
+                    Point1="-23.8333333333329,-46.6666666666664"
+                    Point2="-27.8333333333329,-46.6666666666664"
+                    Point3="-27.8333333333329,-50.6666666666664" />
                   <mssgle:LineSegment
-                    End="157.333333333334,-44.4999999999994" />
+                    End="-27.8333333333329,-85.8333333333327" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="3.61027994791702,-20.9999999999997,150.1127734375,11.609375"
+              BoundingBox="-88.9730533854164,-41.6666666666664,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[Derived Column Output3]"
-          TopLeft="817.333333333333,284.833333333333">
+          TopLeft="849.833333333333,174.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-75.8333333333333"
+              EndConnector="0,-47.8333333333334"
               Start="0,0"
-              End="0,-68.3333333333333">
+              End="0,-40.3333333333334">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-68.3333333333333" />
+                    End="0,-40.3333333333334" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21366,30 +21350,30 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[Derived Column Output2]"
-          TopLeft="496.833333333334,190.166666666666">
+          TopLeft="488.666666666667,155.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="83.444444444444,-87.3333333333335"
+              EndConnector="64.1111111111107,-82.8333333333335"
               Start="0,0"
-              End="83.444444444444,-79.8333333333335">
+              End="64.1111111111107,-75.3333333333335">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-47.7786561264822" />
+                    End="0,-45.110671936759" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-47.7786561264822"
-                    Point2="0,-51.7786561264822"
-                    Point3="4,-51.7786561264822" />
+                    Point1="0,-45.110671936759"
+                    Point2="0,-49.110671936759"
+                    Point3="4,-49.110671936759" />
                   <mssgle:LineSegment
-                    End="79.444444444444,-51.7786561264822" />
+                    End="60.1111111111107,-49.110671936759" />
                   <mssgle:CubicBezierSegment
-                    Point1="79.444444444444,-51.7786561264822"
-                    Point2="83.444444444444,-51.7786561264822"
-                    Point3="83.444444444444,-55.7786561264822" />
+                    Point1="60.1111111111107,-49.110671936759"
+                    Point2="64.1111111111107,-49.110671936759"
+                    Point3="64.1111111111107,-53.110671936759" />
                   <mssgle:LineSegment
-                    End="83.444444444444,-79.8333333333335" />
+                    End="64.1111111111107,-75.3333333333335" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21400,7 +21384,7 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[Derived Column Output1]"
-          TopLeft="180.833333333333,305.333333333333">
+          TopLeft="357.833333333333,312.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -21422,18 +21406,18 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Product.Paths[Derived Column Output]"
-          TopLeft="307,150.833333333333">
+          TopLeft="90.5000000000003,147.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.9999999999998"
+              EndConnector="0,56.0000000000003"
               Start="0,0"
-              End="0,31.4999999999998">
+              End="0,48.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.4999999999998" />
+                    End="0,48.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21559,8 +21543,8 @@ WHERE STATUS = 1</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150.666666666667,42"
-          Id="Package\ProductType\OLE DB Source"
+          Size="148,42.6666666666667"
+          Id="Package\ProductType\Jupiter_LoaiSP"
           TopLeft="39.8750019092113,20.850000127852" />
         <NodeLayout
           Size="121.333333333334,42.6666666666667"
@@ -21609,33 +21593,29 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\ProductType.Paths[OLE DB Source Output]"
-          TopLeft="190.541668575878,42.3166677011052">
+          TopLeft="187.875001909211,42.4833343677719">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="161.916661432634,0"
+              EndConnector="164.583328099301,0"
               Start="0,0"
-              End="154.416661432634,0">
+              End="157.083328099301,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="154.416661432634,0" />
+                    End="157.083328099301,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21657,9 +21637,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21729,9 +21707,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21753,9 +21729,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -21777,16 +21751,14 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\ProductType\OLE DB Source">
+    design-time-name="Package\ProductType\Jupiter_LoaiSP">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -21952,54 +21924,6 @@ WHERE STATUS = 1</property>
           TopLeft="772.166666666667,202.833333333333" />
         <EdgeLayout
           Id="Package\Receipt.Paths[OLE DB Source Output]"
-          TopLeft="119.5,56.1666666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Receipt.Paths[OLE DB Source Output1]"
-          TopLeft="657,248.499999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.0000000000003"
-              Start="0,0"
-              End="0,37.5000000000003">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5000000000003" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Receipt.Paths[OLE DB Source Output3]"
           TopLeft="477.722222222222,247.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22017,13 +21941,11 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Receipt.Paths[OLE DB Source Output2]"
+          Id="Package\Receipt.Paths[OLE DB Source Output1]"
           TopLeft="313.5,56.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22041,9 +21963,51 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Receipt.Paths[OLE DB Source Output3]"
+          TopLeft="657,248.499999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.0000000000003"
+              Start="0,0"
+              End="0,37.5000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Receipt.Paths[OLE DB Source Output2]"
+          TopLeft="119.5,56.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22101,9 +22065,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22125,9 +22087,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22149,9 +22109,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22173,9 +22131,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22197,9 +22153,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22233,9 +22187,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22293,37 +22245,11 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Receipt.Paths[Sort Output]"
-          TopLeft="267.5,400.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="141,0"
-              Start="0,0"
-              End="133.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="133.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Receipt.Paths[Sort Output4]"
           TopLeft="741.166666666666,317.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22341,13 +22267,11 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Receipt.Paths[Sort Output3]"
+          Id="Package\Receipt.Paths[Sort Output4]"
           TopLeft="855,377.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22365,13 +22289,11 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Receipt.Paths[Sort Output2]"
+          Id="Package\Receipt.Paths[Sort Output3]"
           TopLeft="119.5,245.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22401,13 +22323,11 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Receipt.Paths[Sort Output1]"
+          Id="Package\Receipt.Paths[Sort Output2]"
           TopLeft="312.5,246.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22437,9 +22357,29 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Receipt.Paths[Sort Output1]"
+          TopLeft="267.5,400.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141,0"
+              Start="0,0"
+              End="133.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="133.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -23215,392 +23155,370 @@ WHERE STATUS = 1</property>
         <NodeLayout
           Size="124,42.6666666666667"
           Id="Package\Store\Sort_LCH"
-          TopLeft="58.8333333333334,93.833333333333" />
+          TopLeft="228.924242424242,126.651515151515" />
         <NodeLayout
           Size="138,42.6666666666667"
           Id="Package\Store\Get_Country"
-          TopLeft="276.833333333333,302.833333333333" />
+          TopLeft="422.833333333333,316.833333333333" />
         <NodeLayout
           Size="121.333333333334,42.6666666666667"
           Id="Package\Store\Get_LCH"
-          TopLeft="60.1666666666667,204.5" />
+          TopLeft="234.166666666667,218.5" />
         <NodeLayout
           Size="164,42"
           Id="Package\Store\Insert Destination"
-          TopLeft="783.083333333333,380.833333333333" />
+          TopLeft="748.083333333333,34.8333333333328" />
         <NodeLayout
           Size="131.333333333334,42.6666666666667"
           Id="Package\Store\Jupiter_CH"
-          TopLeft="260.166666666667,5.49999999999993" />
+          TopLeft="25.166666666667,23.4999999999998" />
         <NodeLayout
           Size="166.666666666667,42.6666666666667"
           Id="Package\Store\NDS_Country_sort"
-          TopLeft="445.5,216.166666666666" />
+          TopLeft="407.5,227.166666666666" />
         <NodeLayout
           Size="125.333333333334,42.6666666666667"
           Id="Package\Store\NDS_LCH"
-          TopLeft="53.1666666666666,10.4999999999998" />
+          TopLeft="228.166666666667,25.4999999999997" />
         <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\Store\Slowly Changing Dimension"
-          TopLeft="479.916666666666,375.416666666666" />
+          TopLeft="632.916666666666,231.416666666666" />
         <NodeLayout
           Size="142.666666666667,42.6666666666667"
           Id="Package\Store\NDS_Country"
-          TopLeft="457.5,116.499999999999" />
+          TopLeft="419.5,140.499999999999" />
         <NodeLayout
           Size="176,42.6666666666667"
           Id="Package\Store\Jupiter_sort_country"
-          TopLeft="36.8333333333334,306.166666666666" />
+          TopLeft="200.833333333333,314.166666666666" />
         <NodeLayout
-          Size="160,42.6666666666667"
+          Size="160,52.6666666666667"
           Id="Package\Store\Jupiter_sort_LCH"
-          TopLeft="245.833333333333,210.833333333333" />
+          TopLeft="13.833333333333,218.833333333333" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Store\Add timestamps"
-          TopLeft="262.25,376.5" />
+          TopLeft="632.25,318.5" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\Store\Add src_ID"
-          TopLeft="259.833333333333,108.166666666666" />
+          TopLeft="23.8333333333329,127.166666666666" />
         <NodeLayout
           Size="133.333333333334,42.6666666666667"
           Id="Package\Store\UpdateRow"
-          TopLeft="649.833333333333,220.583333333333" />
+          TopLeft="517.287878787879,29.6742424242419" />
         <EdgeLayout
           Id="Package\Store.Paths[Sort Output3]"
-          TopLeft="212.833333333333,325.833333333333">
+          TopLeft="376.833333333333,336.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64,0"
+              EndConnector="45.9999999999995,0"
               Start="0,0"
-              End="56.5,0">
+              End="38.4999999999995,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.5,0" />
+                    End="38.4999999999995,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[Sort Output2]"
-          TopLeft="528.833333333333,258.833333333333">
+          TopLeft="491.333333333333,269.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-183,43.9999999999999"
+              EndConnector="0,47.0000000000003"
               Start="0,0"
-              End="-183,36.4999999999999">
+              End="0,39.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="-4,22" />
-                  <mssgle:LineSegment
-                    End="-179,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-179,22"
-                    Point2="-183,22"
-                    Point3="-183,26" />
-                  <mssgle:LineSegment
-                    End="-183,36.4999999999999" />
+                    End="0,39.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[Sort Output1]"
-          TopLeft="245.833333333333,229">
+          TopLeft="173.833333333333,242.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-64.3333333333334,0"
+              EndConnector="60.3333333333337,0"
               Start="0,0"
-              End="-56.8333333333334,0">
+              End="52.8333333333337,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-56.8333333333334,0" />
+                    End="52.8333333333337,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[Sort Output]"
-          TopLeft="120.833333333333,136.5">
+          TopLeft="292.878787878788,169.318181818181">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67.9999999999999"
+              EndConnector="0,49.1818181818185"
               Start="0,0"
-              End="0,60.4999999999999">
+              End="0,41.6818181818185">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.4999999999999" />
+                    End="0,41.6818181818185" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[OLE DB Source Output2]"
-          TopLeft="118.333333333333,53.1666666666664">
+          TopLeft="290.878787878788,68.1666666666663">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.6666666666665"
+              EndConnector="0,58.4848484848484"
               Start="0,0"
-              End="0,33.1666666666665">
+              End="0,50.9848484848484">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.1666666666665" />
+                    End="0,50.9848484848484" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[OLE DB Source Output1]"
-          TopLeft="528.833333333333,159.166666666666">
+          TopLeft="490.833333333333,183.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.0000000000001"
+              EndConnector="0,44.0000000000003"
               Start="0,0"
-              End="0,49.5000000000001">
+              End="0,36.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.5000000000001" />
+                    End="0,36.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[OLE DB Source Output]"
-          TopLeft="325.833333333333,48.1666666666666">
+          TopLeft="90.3333333333333,66.1666666666664">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60.9999999999994"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,53.4999999999994">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,53.4999999999994" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[New Output]"
-          TopLeft="689.25,399.291666666666">
+          TopLeft="771.138888888888,231.416666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="93.8333333333336,0"
+              EndConnector="58.9444444444447,-154.583333333333"
               Start="0,0"
-              End="86.3333333333336,0">
+              End="58.9444444444447,-147.083333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="86.3333333333336,0" />
+                    End="0,-58.536873156342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-58.536873156342"
+                    Point2="0,-62.536873156342"
+                    Point3="4,-62.536873156342" />
+                  <mssgle:LineSegment
+                    End="54.9444444444447,-62.536873156342" />
+                  <mssgle:CubicBezierSegment
+                    Point1="54.9444444444447,-62.536873156342"
+                    Point2="58.9444444444447,-62.536873156342"
+                    Point3="58.9444444444447,-66.536873156342" />
+                  <mssgle:LineSegment
+                    End="58.9444444444447,-147.083333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="16.0752799479168,5,54.1827734375,11.43359375"
+              BoundingBox="2.38083550347234,-57.536873156342,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[Merge Join Output1]"
-          TopLeft="342.708333333333,345.499999999999">
+          TopLeft="560.833333333333,339">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.0000000000001"
+              EndConnector="71.4166666666672,0"
               Start="0,0"
-              End="0,23.5000000000001">
+              End="63.9166666666672,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5000000000001" />
+                    End="63.9166666666672,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[Merge Join Output]"
-          TopLeft="122.833333333333,247.166666666666">
+          TopLeft="291.833333333333,261.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59"
+              EndConnector="0,52.9999999999993"
               Start="0,0"
-              End="0,51.5">
+              End="0,45.4999999999993">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.5" />
+                    End="0,45.4999999999993" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[Derived Column Output1]"
-          TopLeft="416.916666666667,397.291666666666">
+          TopLeft="706.805555555555,318.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="62.9999999999998,0"
+              EndConnector="0,-44.4166666666673"
               Start="0,0"
-              End="55.4999999999998,0">
+              End="0,-36.9166666666673">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="55.4999999999998,0" />
+                    End="0,-36.9166666666673" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[Derived Column Output]"
-          TopLeft="325.833333333333,150.833333333333">
+          TopLeft="91.8333333333329,169.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999998"
+              EndConnector="0,49.0000000000002"
               Start="0,0"
-              End="0,52.4999999999998">
+              End="0,41.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999998" />
+                    End="0,41.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Store.Paths[Changing Attribute Updates Output]"
-          TopLeft="584.583333333333,375.416666666666">
+          TopLeft="704.027777777777,231.416666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="131.916666666667,-112.166666666666"
+              EndConnector="-120.073232323232,-159.075757575757"
               Start="0,0"
-              End="131.916666666667,-104.666666666666">
+              End="-120.073232323232,-151.575757575757">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-52.0833333333332" />
+                    End="0,-60.3542887790674" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-52.0833333333332"
-                    Point2="0,-56.0833333333332"
-                    Point3="4,-56.0833333333332" />
+                    Point1="0,-60.3542887790674"
+                    Point2="0,-64.3542887790674"
+                    Point3="-4,-64.3542887790674" />
                   <mssgle:LineSegment
-                    End="127.916666666667,-56.0833333333332" />
+                    End="-116.073232323232,-64.3542887790674" />
                   <mssgle:CubicBezierSegment
-                    Point1="127.916666666667,-56.0833333333332"
-                    Point2="131.916666666667,-56.0833333333332"
-                    Point3="131.916666666667,-60.0833333333332" />
+                    Point1="-116.073232323232,-64.3542887790674"
+                    Point2="-120.073232323232,-64.3542887790674"
+                    Point3="-120.073232323232,-68.3542887790674" />
                   <mssgle:LineSegment
-                    End="131.916666666667,-104.666666666666" />
+                    End="-120.073232323232,-151.575757575757" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-12.5755729166665,-51.0833333333332,157.0678125,11.6630859375"
+              BoundingBox="-138.570522411616,-59.3542887790674,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -23740,8 +23658,8 @@ WHERE STATUS = 1</property>
           Id="Package\StoreType\Union All"
           TopLeft="444.166666666667,216.833333333333" />
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\StoreType\OLE DB Source"
+          Size="136,42.6666666666667"
+          Id="Package\StoreType\Jupiter_LCH"
           TopLeft="25.5,24.4999999999999" />
         <NodeLayout
           Size="178.666666666667,42.6666666666667"
@@ -23782,9 +23700,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23806,9 +23722,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23830,33 +23744,29 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\StoreType.Paths[OLE DB Source Output]"
-          TopLeft="176.166666666667,44.6666666666665">
+          TopLeft="161.5,44.6666666666665">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="230.666666666667,0"
+              EndConnector="245.333333333333,0"
               Start="0,0"
-              End="223.166666666667,0">
+              End="237.833333333333,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="223.166666666667,0" />
+                    End="237.833333333333,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23878,9 +23788,7 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23950,16 +23858,14 @@ WHERE STATUS = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\StoreType\OLE DB Source">
+    design-time-name="Package\StoreType\Jupiter_LCH">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

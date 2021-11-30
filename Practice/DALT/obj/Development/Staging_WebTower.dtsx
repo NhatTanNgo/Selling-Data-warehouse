@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Staging_WebTower"
   DTS:PackageType="5"
-  DTS:VersionBuild="65"
-  DTS:VersionGUID="{21D94E79-AA06-445C-99E0-7EC7D2B77DE9}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{8C187A01-21FD-4D9F-A5D9-6F2DA8698A4D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -455,15 +455,15 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get CET_CTHD"
+      DTS:refId="Package\Get CET_LSET_CTHD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{7BC67F7E-99F3-4815-94B3-620628A671A4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get CET_CTHD"
+      DTS:ObjectName="Get CET_LSET_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -473,19 +473,22 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
           <SQLTask:ResultBinding
             SQLTask:ResultName="CET"
             SQLTask:DtsVariableName="User::CETResult" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSETResult" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get CET_HD"
+      DTS:refId="Package\Get CET_LSET_HD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{DFA4F4EA-FE9B-4AB6-A0A5-19078A5C3645}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get CET_HD"
+      DTS:ObjectName="Get CET_LSET_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -495,17 +498,20 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
           <SQLTask:ResultBinding
             SQLTask:ResultName="CET"
             SQLTask:DtsVariableName="User::CETResult" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSETResult" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get CET_KH"
+      DTS:refId="Package\Get CET_LSET_KH"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{98791AFB-C5C0-4F77-9B73-3D5A63C99793}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get CET_KH"
+      DTS:ObjectName="Get CET_LSET_KH"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -517,69 +523,6 @@ Where (NgayTao &gt;= ? AND NgayTao &lt;?) OR (NgayCapNhat &gt;= ? AND NgayCapNha
           <SQLTask:ResultBinding
             SQLTask:ResultName="CET"
             SQLTask:DtsVariableName="User::CETResult" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET_CTHD"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{EAE5ABF3-4842-47C7-AF0C-9F7DBE4DD167}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET_CTHD"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{7753EA35-6DB7-4217-B8FC-49ADF9109016}"
-          SQLTask:SqlStatementSource="SELECT LSET&#xA;FROM   Data_Flow&#xA;WHERE (Name = 'WebTower9_ChiTietHoaDon')"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSETResult" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET_HD"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{42FC4AFD-83DC-4C4C-BA03-F559F2AE233C}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET_HD"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{7753EA35-6DB7-4217-B8FC-49ADF9109016}"
-          SQLTask:SqlStatementSource="SELECT LSET&#xA;FROM   Data_Flow&#xA;WHERE (Name = 'WebTower9_HoaDon')"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSETResult" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET_KH"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D98FC763-884C-4C9C-B1CB-30C1CA57D9FA}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET_KH"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{7753EA35-6DB7-4217-B8FC-49ADF9109016}"
-          SQLTask:SqlStatementSource="SELECT LSET&#xA;FROM   Data_Flow&#xA;WHERE (Name = 'WebTower9_KhachHang')"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="LSET"
             SQLTask:DtsVariableName="User::LSETResult" />
@@ -1511,7 +1454,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_CTHD"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1589,7 +1532,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
       DTS:LocaleID="-1"
       DTS:ObjectName="Profiling_WHD"
       DTS:TaskContact="Data Profiling Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
@@ -1745,7 +1688,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1762,12 +1705,12 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate stage_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{7753EA35-6DB7-4217-B8FC-49ADF9109016}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.HoaDon_WebTower9_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE HoaDon_WebTower9_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1796,7 +1739,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_CTHD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1813,7 +1756,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LSET_HD"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1850,50 +1793,26 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{0DAEF31B-825F-46C7-8FDB-1643B0AE96C5}"
-      DTS:From="Package\Get CET_HD"
+      DTS:DTSID="{63878EE9-0DF0-4E5B-9526-1CAE976173F1}"
+      DTS:From="Package\Get CET_LSET_HD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Get LSET_HD" />
+      DTS:To="Package\Truncate stage_HD" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{1159BD6E-535C-43CA-83FD-457543C4421A}"
-      DTS:From="Package\Get CET_KH"
+      DTS:DTSID="{A3820E70-95AC-427D-98DB-8111325F06E6}"
+      DTS:From="Package\Get CET_LSET_KH"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Get LSET_KH" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{477EFC7B-D57B-4A50-8244-E4FD6C5E7403}"
-      DTS:From="Package\Get CET_CTHD"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 1"
-      DTS:To="Package\Get LSET_CTHD" />
+      DTS:To="Package\Truncate stage_KH" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{83BAC27A-FABC-47D5-A16B-0893212693A2}"
-      DTS:From="Package\Get LSET_HD"
+      DTS:DTSID="{BC02F2F3-7827-4953-81CE-002B278CCFBD}"
+      DTS:From="Package\Get CET_LSET_CTHD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Truncate stage_HD" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{BA5B800B-50F4-468A-B0FB-E2F6105C5879}"
-      DTS:From="Package\Get LSET_KH"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2 1"
-      DTS:To="Package\Truncate stage_KH" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{01C3F5F0-21CB-433A-A255-5DFA03E83C11}"
-      DTS:From="Package\Get LSET_CTHD"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2 1 1"
       DTS:To="Package\Truncate stage_CTHD" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
@@ -1979,78 +1898,30 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Get CET_CTHD"
-          TopLeft="27.1964282481271,5.5" />
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\Get LSET_CTHD"
-          TopLeft="23.4464283040059,77.6499987098572" />
+          Size="180,42.6666666666667"
+          Id="Package\Get CET_LSET_CTHD"
+          TopLeft="14.6964284343917,3.87500002905728" />
         <NodeLayout
           Size="182.666666666667,42.6666666666667"
           Id="Package\Truncate stage_CTHD"
-          TopLeft="12.821428462331,161.916664167742" />
+          TopLeft="12.821428462331,70.9166657949487" />
         <NodeLayout
           Size="201.333333333334,42.6666666666667"
           Id="Package\CTHD_WebTower Staging"
-          TopLeft="5.5,230.23749598138" />
+          TopLeft="5.50000000000006,139.237497608587" />
         <NodeLayout
           Size="173.333333333334,42.6666666666667"
           Id="Package\Update LSET_CTHD"
-          TopLeft="18.7142855173769,308.399994583725" />
+          TopLeft="18.7142855173769,217.399996210932" />
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Profiling_CTHD"
-          TopLeft="25.5892854149321,376.330939610699" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 1]"
-          TopLeft="101.988094942733,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.4833320431905"
-              Start="0,0"
-              End="0,21.9833320431905">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.9833320431905" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2 1 1]"
-          TopLeft="102.800595049835,120.316665376524">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.5999987912183"
-              Start="0,0"
-              End="0,34.0999987912183">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.0999987912183" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="25.5892854149321,285.330941237905" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3 1 1]"
-          TopLeft="105.160714231166,204.583330834409">
+          TopLeft="105.160714231166,113.583332461616">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2072,7 +1943,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4 1 1]"
-          TopLeft="105.773809425355,272.904162648047">
+          TopLeft="105.773809425355,181.904164275254">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2094,18 +1965,40 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6 1]"
-          TopLeft="103.151785466155,351.066661250391">
+          TopLeft="103.151785466155,260.066662877597">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25.2642783603082"
+              EndConnector="0,25.2642783603083"
               Start="0,0"
-              End="0,17.7642783603082">
+              End="0,17.7642783603083">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.7642783603082" />
+                    End="0,17.7642783603083" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="104.425595115028,46.5416666957239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.3749990992248"
+              Start="0,0"
+              End="0,16.8749990992248">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8749990992248" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2118,96 +2011,46 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
           Text="WebTower9_ChiTietHoaDon"
           ParentId="Package"
           HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="212,474"
-          Size="170,42.6666666666667"
+          IsExpanded="True"
+          PanelSize="212,364.666666666667"
+          Size="212,407.333333333334"
           Id="a0b35c5d-c874-4355-8c9a-bf159bc0c103"
-          TopLeft="264.633924546119,41.8398805750515">
+          TopLeft="320.363090382356,103.481546139479">
           <GroupLayout.ChildrenIds>
-            <s:String>Package\Get CET_CTHD</s:String>
-            <s:String>Package\Get LSET_CTHD</s:String>
+            <s:String>Package\Get CET_LSET_CTHD</s:String>
             <s:String>Package\Truncate stage_CTHD</s:String>
             <s:String>Package\CTHD_WebTower Staging</s:String>
             <s:String>Package\Update LSET_CTHD</s:String>
             <s:String>Package\Profiling_CTHD</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint 1 1]</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint 2 1 1]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 3 1 1]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 4 1 1]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 6 1]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 2]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
-          Size="137.333333333334,42.6666666666667"
-          Id="Package\Get CET_KH"
-          TopLeft="27.196428248127,5.5" />
-        <NodeLayout
-          Size="142.666666666667,42.6666666666667"
-          Id="Package\Get LSET_KH"
-          TopLeft="23.446428304006,77.6499987098574" />
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Get CET_LSET_KH"
+          TopLeft="11.5714284809578,11.999999883771" />
         <NodeLayout
           Size="169.333333333334,42.6666666666667"
           Id="Package\Truncate stage_KH"
-          TopLeft="12.821428462331,161.916664167742" />
+          TopLeft="14.3839284390483,82.291665591548" />
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\KH_WebTower Staging"
-          TopLeft="5.5,230.121424554885" />
+          TopLeft="7.06249997671728,150.496425978691" />
         <NodeLayout
           Size="158.666666666667,42.6666666666667"
           Id="Package\Update LSET_KH"
-          TopLeft="18.714285517377,308.399994583725" />
+          TopLeft="20.2767854940943,228.774996007531" />
         <NodeLayout
           Size="146.666666666667,42.6666666666667"
           Id="Package\Profiling_WKH"
-          TopLeft="25.589285414932,376.3309396107" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="95.3214282760665,48.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.4833320431907"
-              Start="0,0"
-              End="0,21.9833320431907">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.9833320431907" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2 1]"
-          TopLeft="96.1339283831686,120.316665376524">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.5999987912183"
-              Start="0,0"
-              End="0,34.0999987912183">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.0999987912183" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="27.1517853916492,296.705941034505" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3 1]"
-          TopLeft="98.4940475644988,204.583330834409">
+          TopLeft="100.056547541216,124.958332258215">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2229,7 +2072,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4 1]"
-          TopLeft="98.7738094253552,272.788091221551">
+          TopLeft="100.336309402073,193.163092645357">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2251,18 +2094,40 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="98.4851187994878,351.066661250392">
+          TopLeft="100.047618776205,271.441662674197">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25.2642783603083"
+              EndConnector="0,25.2642783603084"
               Start="0,0"
-              End="0,17.7642783603083">
+              End="0,17.7642783603084">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.7642783603083" />
+                    End="0,17.7642783603084" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="96.9776784600031,54.6666665504376">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.6249990411104"
+              Start="0,0"
+              End="0,20.1249990411104">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1249990411104" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2276,95 +2141,45 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="198.666666666667,474"
-          Size="198.666666666667,516.666666666667"
+          PanelSize="198.666666666667,372.666666666667"
+          Size="198.666666666667,416"
           Id="662bb740-bdc3-4510-90e7-53e5c4905417"
-          TopLeft="570.839277126161,43.2797615187155">
+          TopLeft="571.151777121504,94.7380939319017">
           <GroupLayout.ChildrenIds>
-            <s:String>Package\Get CET_KH</s:String>
-            <s:String>Package\Get LSET_KH</s:String>
+            <s:String>Package\Get CET_LSET_KH</s:String>
             <s:String>Package\Truncate stage_KH</s:String>
             <s:String>Package\KH_WebTower Staging</s:String>
             <s:String>Package\Update LSET_KH</s:String>
             <s:String>Package\Profiling_WKH</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint 1]</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint 2 1]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 3 1]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 4 1]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 6]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
-          Size="138,42.6666666666667"
-          Id="Package\Get CET_HD"
-          TopLeft="35.9464281177415,5.5" />
-        <NodeLayout
-          Size="142.666666666667,42.6666666666667"
-          Id="Package\Get LSET_HD"
-          TopLeft="34.0714281456811,76.349998733103" />
+          Size="168,42.6666666666667"
+          Id="Package\Get CET_LSET_HD"
+          TopLeft="25.5297616062953,5.5" />
         <NodeLayout
           Size="170.666666666667,42.6666666666667"
           Id="Package\Truncate stage_HD"
-          TopLeft="16.5714284064514,154.116664307217" />
+          TopLeft="23.8630949644638,92.366665411393" />
         <NodeLayout
           Size="206.666666666667,42.6666666666667"
           Id="Package\HoaDonWebTower Staging"
-          TopLeft="5.5,227.799996024967" />
+          TopLeft="12.7916665580124,166.049997129143" />
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Update LSET_HD"
-          TopLeft="28.7142853683658,296.235709086954" />
+          TopLeft="36.0059519263782,234.48571019113" />
         <NodeLayout
           Size="148,42.6666666666667"
           Id="Package\Profiling_WHD"
-          TopLeft="38.1785709416226,362.419636474922" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="105.175594798378,48.166666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.1833320664362"
-              Start="0,0"
-              End="0,20.6833320664362">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.6833320664362" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="103.6547616094,119.016665399769">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.0999989074473"
-              Start="0,0"
-              End="0,27.5999989074473">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5999989074473" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="45.470237499635,300.669637579098" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="105.369047536559,196.783330973884">
+          TopLeft="112.660714094571,135.03333207806">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2386,7 +2201,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="108.77380935085,270.466662691634">
+          TopLeft="116.065475908862,208.71666379581">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2408,18 +2223,40 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="110.446428154994,338.902375753621">
+          TopLeft="117.738094713006,277.152376857797">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.5172607213013"
+              EndConnector="0,23.5172607213012"
               Start="0,0"
-              End="0,16.0172607213013">
+              End="0,16.0172607213012">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.0172607213013" />
+                    End="0,16.0172607213012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="109.363094952046,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.1999987447264"
+              Start="0,0"
+              End="0,36.6999987447264">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.6999987447264" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2432,23 +2269,21 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
           Text="WebTower9_HoaDon"
           ParentId="Package"
           HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="217.333333333334,460"
-          Size="138,42.6666666666667"
+          IsExpanded="True"
+          PanelSize="224.666666666667,398.666666666667"
+          Size="224.666666666667,441.333333333334"
           Id="8bad66bc-04d8-4e52-86d4-783b68f8adbf"
-          TopLeft="58.7678566545781,41.9999995682925">
+          TopLeft="54.0803567244273,103.099998475739">
           <GroupLayout.ChildrenIds>
-            <s:String>Package\Get CET_HD</s:String>
-            <s:String>Package\Get LSET_HD</s:String>
+            <s:String>Package\Get CET_LSET_HD</s:String>
             <s:String>Package\Truncate stage_HD</s:String>
             <s:String>Package\HoaDonWebTower Staging</s:String>
             <s:String>Package\Update LSET_HD</s:String>
             <s:String>Package\Profiling_WHD</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint]</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint 2]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 3]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 4]</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 5]</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
       </GraphLayout>
@@ -2458,7 +2293,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
     design-time-name="Package\CTHD_WebTower Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\CTHD_WebTower Staging\OLE DB Source"
@@ -2486,7 +2321,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2522,7 +2359,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
     design-time-name="Package\HoaDonWebTower Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="172,42.6666666666667"
           Id="Package\HoaDonWebTower Staging\OLE DB Destination"
@@ -2550,7 +2387,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2586,7 +2425,7 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
     design-time-name="Package\KH_WebTower Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\KH_WebTower Staging\OLE DB Source"
@@ -2614,7 +2453,9 @@ WHERE ((NgayCapNhat &gt;= ?) AND (NgayCapNhat &lt; ?)) OR ((NgayTao &gt;= ?) AND
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

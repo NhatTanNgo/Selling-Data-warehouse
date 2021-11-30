@@ -2,20 +2,29 @@
 <DataProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
   <ProfileVersion>1.0</ProfileVersion>
   <DataSources>
-    <DtsDataSource ID="{5EE70623-FA34-4E65-916F-BE342CD9EBEA}" Name="Jade_ChiTietHoaDon.txt">
+    <DtsDataSource ID="{AFAD435E-CFD9-4822-B548-F7A3F430FECA}" Name="Jade_ChiTietHoaDon.txt">
       <DtsConnectionManagerID>Jade_ChiTietHoaDon.txt</DtsConnectionManagerID>
     </DtsDataSource>
-    <DtsDataSource ID="{202355F2-63F7-4CE1-8D53-6E98A902E420}" Name="Jade_HoaDon.txt">
+    <DtsDataSource ID="{5F7A99C6-9C73-444C-BD71-C28047D80EF0}" Name="Jade_HoaDon.txt">
       <DtsConnectionManagerID>Jade_HoaDon.txt</DtsConnectionManagerID>
     </DtsDataSource>
-    <DtsDataSource ID="{BF310DC0-BC70-4807-90D1-20789331D6DC}" Name="Jade_KhachHang.txt">
+    <DtsDataSource ID="{80A03D32-C887-4377-BAE7-4F2D9BC5B0C5}" Name="Jade_KhachHang.txt">
       <DtsConnectionManagerID>Jade_KhachHang.txt</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{D85BA608-692D-4F2E-AC15-295C98C5E099}" Name="LocalHost.DDS_DALT">
+      <DtsConnectionManagerID>LocalHost.DDS_DALT</DtsConnectionManagerID>
     </DtsDataSource>
     <DtsDataSource ID="{71862845-CF71-454D-8EAF-3D4B8582212E}" Name="LocalHost.Jade">
       <DtsConnectionManagerID>LocalHost.Jade</DtsConnectionManagerID>
     </DtsDataSource>
+    <DtsDataSource ID="{4A89D8D9-74DB-4E31-B6CC-B164C5A76D9F}" Name="LocalHost.Jupiter">
+      <DtsConnectionManagerID>LocalHost.Jupiter</DtsConnectionManagerID>
+    </DtsDataSource>
     <DtsDataSource ID="{7753EA35-6DB7-4217-B8FC-49ADF9109016}" Name="LocalHost.MetaData_Demo">
       <DtsConnectionManagerID>LocalHost.MetaData_Demo</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{41B3BC70-ECEA-4BE8-806E-759D0197542C}" Name="LocalHost.NDS_Demo">
+      <DtsConnectionManagerID>LocalHost.NDS_Demo</DtsConnectionManagerID>
     </DtsDataSource>
     <DtsDataSource ID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}" Name="LocalHost.Stage_DALT">
       <DtsConnectionManagerID>LocalHost.Stage_DALT</DtsConnectionManagerID>

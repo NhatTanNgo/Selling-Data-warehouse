@@ -17,6 +17,9 @@
     <DtsDataSource ID="{EF3A2A7E-A486-4825-84AE-4158A37D3810}" Name="Jupiter_SanPham.txt">
       <DtsConnectionManagerID>Jupiter_SanPham.txt</DtsConnectionManagerID>
     </DtsDataSource>
+    <DtsDataSource ID="{D85BA608-692D-4F2E-AC15-295C98C5E099}" Name="LocalHost.DDS_DALT">
+      <DtsConnectionManagerID>LocalHost.DDS_DALT</DtsConnectionManagerID>
+    </DtsDataSource>
     <DtsDataSource ID="{71862845-CF71-454D-8EAF-3D4B8582212E}" Name="LocalHost.Jade">
       <DtsConnectionManagerID>LocalHost.Jade</DtsConnectionManagerID>
     </DtsDataSource>
@@ -25,6 +28,9 @@
     </DtsDataSource>
     <DtsDataSource ID="{7753EA35-6DB7-4217-B8FC-49ADF9109016}" Name="LocalHost.MetaData_Demo">
       <DtsConnectionManagerID>LocalHost.MetaData_Demo</DtsConnectionManagerID>
+    </DtsDataSource>
+    <DtsDataSource ID="{41B3BC70-ECEA-4BE8-806E-759D0197542C}" Name="LocalHost.NDS_Demo">
+      <DtsConnectionManagerID>LocalHost.NDS_Demo</DtsConnectionManagerID>
     </DtsDataSource>
     <DtsDataSource ID="{49063CE0-4ABE-403B-8BD8-F146E6B42BA7}" Name="LocalHost.Stage_DALT">
       <DtsConnectionManagerID>LocalHost.Stage_DALT</DtsConnectionManagerID>

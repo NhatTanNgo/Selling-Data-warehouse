@@ -26,20 +26,20 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-0IA21OI</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0UK3wNsyDEaCf3pcP3N8EAAAAAACAAAAAAAQZgAAAAEAACAAAAB9DpxJOELQUeDnB9U4MKKw78VsbJ+a07xSCyuP8bHBLAAAAAAOgAAAAAIAACAAAADlxH+WLQjMn+NZmbxXE9ALuUX50YOnYMfIg5KeyZVD85AAAAD5zTa167f2mluQcHWRUFMgkpJgeBjvHxjoOH7TqcshxXZvTc3E9BAfdb9PjCb4hc0wXeRuMJj+sPp6yCLa+ZWXZkA0/W6FDLSXNZMvOVvJnBPqMsukgzX2r6eqSH3OOxcuj8QUtnmNePzUbGAi1QBzNbenTBJtSmXb6a3lchDLbfMWfgL4KicVjd73no9uAJlAAAAAEi+dBgTpeU2zq01qa0BOzfKHdE1bmc+Wf/3OHG4/ljOwcGGrOsIkTvnFxXjX+aY++ft7bgEUbNqYDiQFyl8lgA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0UK3wNsyDEaCf3pcP3N8EAAAAAACAAAAAAAQZgAAAAEAACAAAAA2pM5e4V9Vy34jZhn82g+voRZEIGr+CuU6U+KSEbfPsgAAAAAOgAAAAAIAACAAAADXPOrhbx29sXXxhT61DnDL1RZqh4zchVbhOqgKyWA9HpAAAACm/p+fkb2UIvEUAOh6Kcb7q9V1chYCDain0xAWPV3lm5d1Mwqu5HcsaWdIpzEDc7L8Go8FKT7DTTyDnF2BbgGnl102xBHAxhmFaDLoiRHJx4O9anxW77+Z/Vji3/NXUuSEGIpKOJb8h9fOFMRH7pQDTbqFFMYRIOciWtCt9kEoILgEw1lGoPNAHq0I63wnsH1AAAAA7DbCCU3e9mvp16BM64BKNr2DCzpkjwCF1owegsgqTrJCXg/zXbQgcSdpJ1mb2Udt+wz3u5NYzK0EJSkGWtt2pQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Staging_Jade.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Staging_Jupiter.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Staging_WebTower.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Main_Staging.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="aMain_DDS.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="aMain_NDS.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DDS_Store.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DDS_Product.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DDS_Customer.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="DDS_Receipt.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="aMain_Staging.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="LocalHost.MetaData_Demo.conmgr" />
@@ -79,7 +79,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=MetaData_Demo;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=MetaData_DALT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -139,7 +139,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">MetaData_Demo</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">MetaData_DALT</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -937,7 +937,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=NDS_Demo;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=.;Initial Catalog=NDS_DALT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -997,7 +997,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">NDS_Demo</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">NDS_DALT</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1491,10 +1491,10 @@
                 <SSIS:Property SSIS:Name="Name">Staging_WebTower</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">65</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">70</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{21D94E79-AA06-445C-99E0-7EC7D2B77DE9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8C187A01-21FD-4D9F-A5D9-6F2DA8698A4D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1593,23 +1593,6 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Main_Staging.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{0371D220-425F-4920-95B3-5592E5F006E9}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8FF18372-2DD6-467C-9112-44B16F65CB9B}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="aMain_DDS.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{47AF0E22-A1D6-4A8D-9FD1-1D0724F30FCB}</SSIS:Property>
@@ -1705,6 +1688,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{C501CAB8-801F-47C8-A758-6B18D6AD9EBB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="aMain_Staging.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{97A2FEC6-BDBE-40BC-B87A-AB4B9B6D2F67}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">aMain_Staging</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1C6DC8C4-E75B-4F67-8BF2-E98B89565275}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
