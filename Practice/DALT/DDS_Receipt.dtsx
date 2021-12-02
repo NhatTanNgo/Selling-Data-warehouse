@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DDS_Receipt"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{28BEC26A-F3A0-47F8-805B-A48EFD5D19C3}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{9F4B7414-740D-4431-92AC-3472C3F76682}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -150,7 +150,7 @@ where [refTable].[Ngay] = ? and [refTable].[IDThang] = ?</property>
                       refId="Package\Data Flow Task\Get_DayID.Inputs[Lookup Input].Columns[Day]"
                       cachedDataType="i4"
                       cachedName="Day"
-                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Day]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Day]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -635,7 +635,7 @@ where [refTable].[Thang] = ? and [refTable].[Nam] = ?</property>
                       refId="Package\Data Flow Task\Get_MonthID.Inputs[Lookup Input].Columns[Month]"
                       cachedDataType="i4"
                       cachedName="Month"
-                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Month]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Month]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -651,7 +651,8 @@ where [refTable].[Thang] = ? and [refTable].[Nam] = ?</property>
                       refId="Package\Data Flow Task\Get_MonthID.Inputs[Lookup Input].Columns[Year]"
                       cachedDataType="i4"
                       cachedName="Year"
-                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Year]">
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Year]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -1136,7 +1137,7 @@ where [refTable].[MaCH] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[StoreID]};</property>
+                  name="ParameterMap">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[StoreID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1163,7 +1164,7 @@ where [refTable].[MaCH] = ?</property>
                       refId="Package\Data Flow Task\Get_StoreID.Inputs[Lookup Input].Columns[StoreID]"
                       cachedDataType="i4"
                       cachedName="StoreID"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[StoreID]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[StoreID]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -1237,11 +1238,11 @@ where [refTable].[MaCH] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Insert Day"
+              refId="Package\Data Flow Task\Insert day"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="Insert Day"
+              name="Insert day"
               usesDispositions="true"
               version="2">
               <properties>
@@ -1254,7 +1255,7 @@ where [refTable].[MaCH] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC dbo.Check_Day  ?,?, ?  </property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXEC CheckDay ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1262,7 +1263,7 @@ where [refTable].[MaCH] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\Insert Day.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task\Insert day.Connections[OleDbConnection]"
                   connectionManagerID="{D85BA608-692D-4F2E-AC15-295C98C5E099}:external"
                   connectionManagerRefId="Project.ConnectionManagers[LocalHost.DDS_DALT]"
                   description="The OLE DB runtime connection used to access the database."
@@ -1270,57 +1271,24 @@ where [refTable].[MaCH] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input]"
+                  refId="Package\Data Flow Task\Insert day.Inputs[OLE DB Command Input]"
                   errorOrTruncationOperation="Command Execution"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input].Columns[Day]"
-                      cachedDataType="i4"
-                      cachedName="Day"
-                      externalMetadataColumnId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input].ExternalColumns[@day]"
-                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Day]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input].Columns[Month]"
-                      cachedDataType="i4"
-                      cachedName="Month"
-                      externalMetadataColumnId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input].ExternalColumns[@month]"
-                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Month]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input].Columns[Year]"
+                      refId="Package\Data Flow Task\Insert day.Inputs[OLE DB Command Input].Columns[Year]"
                       cachedDataType="i4"
                       cachedName="Year"
-                      externalMetadataColumnId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input].ExternalColumns[@year]"
-                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Year]" />
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task\Insert day.Inputs[OLE DB Command Input].ExternalColumns[@year]"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Year]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input].ExternalColumns[@day]"
-                      dataType="i4"
-                      name="@day">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input].ExternalColumns[@month]"
-                      dataType="i4"
-                      name="@month">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input].ExternalColumns[@year]"
+                      refId="Package\Data Flow Task\Insert day.Inputs[OLE DB Command Input].ExternalColumns[@year]"
                       dataType="i4"
                       name="@year">
                       <properties>
@@ -1335,29 +1303,29 @@ where [refTable].[MaCH] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Insert Day.Outputs[OLE DB Command Output]"
+                  refId="Package\Data Flow Task\Insert day.Outputs[OLE DB Command Output]"
                   exclusionGroup="1"
                   name="OLE DB Command Output"
-                  synchronousInputId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Data Flow Task\Insert day.Inputs[OLE DB Command Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Insert Day.Outputs[OLE DB Command Error Output]"
+                  refId="Package\Data Flow Task\Insert day.Outputs[OLE DB Command Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input]">
+                  synchronousInputId="Package\Data Flow Task\Insert day.Inputs[OLE DB Command Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Insert Day.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task\Insert day.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Insert Day.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task\Insert day.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Insert Day.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task\Insert day.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Insert Day.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task\Insert day.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1547,8 +1515,7 @@ where [refTable].[MaCH] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT*
-FROM RECEIPT_nds
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM dbo.Receipt_NDS
 WHERE STATUS = 1</property>
                 <property
                   dataType="System.String"
@@ -2013,6 +1980,397 @@ WHERE STATUS = 1</property>
               </outputs>
             </component>
             <component
+              refId="Package\Data Flow Task\Sort year"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort year"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sort year.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[ReceiptID]"
+                      cachedDataType="i4"
+                      cachedName="ReceiptID"
+                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[ReceiptID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[ReceiptNK]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ReceiptNK"
+                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[ReceiptNK]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[CusID]"
+                      cachedDataType="i4"
+                      cachedName="CusID"
+                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[CusID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[StoreID]"
+                      cachedDataType="i4"
+                      cachedName="StoreID"
+                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[StoreID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[SoldDay]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SoldDay"
+                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[SoldDay]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[SourceID]"
+                      cachedDataType="i4"
+                      cachedName="SourceID"
+                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[SourceID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[Status]"
+                      cachedDataType="i4"
+                      cachedName="Status"
+                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[Status]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[CreatedDay]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDay"
+                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[CreatedDay]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[UpdatedDay]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDay"
+                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[UpdatedDay]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[Day]"
+                      cachedDataType="i4"
+                      cachedName="Day"
+                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Day]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[Month]"
+                      cachedDataType="i4"
+                      cachedName="Month"
+                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Month]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort year.Inputs[Sort Input].Columns[Year]"
+                      cachedDataType="i4"
+                      cachedName="Year"
+                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sort year.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[ReceiptID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[ReceiptID]"
+                      name="ReceiptID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[ReceiptID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[ReceiptNK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[ReceiptNK]"
+                      name="ReceiptNK">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[ReceiptNK]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[CusID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[CusID]"
+                      name="CusID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[CusID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[StoreID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[StoreID]"
+                      name="StoreID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[StoreID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[SoldDay]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[SoldDay]"
+                      name="SoldDay">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[SoldDay]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[SourceID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[SourceID]"
+                      name="SourceID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[SourceID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Status]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Status]"
+                      name="Status">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[Status]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[CreatedDay]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[CreatedDay]"
+                      name="CreatedDay">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[CreatedDay]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[UpdatedDay]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[UpdatedDay]"
+                      name="UpdatedDay">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[UpdatedDay]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Day]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Day]"
+                      name="Day">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Day]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Month]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Month]"
+                      name="Month">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Month]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Year]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Year]"
+                      name="Year"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Year]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Data Flow Task\Sort_ReceipID"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2039,7 +2397,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[ReceiptID]"
                       cachedDataType="i4"
                       cachedName="ReceiptID"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[ReceiptID]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[ReceiptID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2057,7 +2415,7 @@ WHERE STATUS = 1</property>
                       cachedDataType="str"
                       cachedLength="4"
                       cachedName="ReceiptNK"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[ReceiptNK]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[ReceiptNK]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2073,7 +2431,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[CusID]"
                       cachedDataType="i4"
                       cachedName="CusID"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[CusID]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[CusID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2089,7 +2447,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[StoreID]"
                       cachedDataType="i4"
                       cachedName="StoreID"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[StoreID]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[StoreID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2105,7 +2463,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[SoldDay]"
                       cachedDataType="dbTimeStamp"
                       cachedName="SoldDay"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[SoldDay]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[SoldDay]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2121,7 +2479,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[SourceID]"
                       cachedDataType="i4"
                       cachedName="SourceID"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[SourceID]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[SourceID]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2137,7 +2495,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[Status]"
                       cachedDataType="i4"
                       cachedName="Status"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[Status]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Status]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2153,7 +2511,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[CreatedDay]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreatedDay"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[CreatedDay]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[CreatedDay]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2169,7 +2527,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[UpdatedDay]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDay"
-                      lineageId="Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[UpdatedDay]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[UpdatedDay]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2185,7 +2543,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[Day]"
                       cachedDataType="i4"
                       cachedName="Day"
-                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Day]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Day]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2201,7 +2559,7 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[Month]"
                       cachedDataType="i4"
                       cachedName="Month"
-                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Month]">
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Month]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2217,7 +2575,8 @@ WHERE STATUS = 1</property>
                       refId="Package\Data Flow Task\Sort_ReceipID.Inputs[Sort Input].Columns[Year]"
                       cachedDataType="i4"
                       cachedName="Year"
-                      lineageId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Year]">
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Year]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2298,7 +2657,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[ReceiptID]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[ReceiptID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2313,7 +2672,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[ReceiptNK]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[ReceiptNK]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2326,7 +2685,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[CusID]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[CusID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2339,7 +2698,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[StoreID]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[StoreID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2352,7 +2711,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[SoldDay]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[SoldDay]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2365,7 +2724,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[SourceID]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[SourceID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2378,7 +2737,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[Status]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Status]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2391,7 +2750,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[CreatedDay]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[CreatedDay]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2404,7 +2763,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\NDS_Receipt.Outputs[OLE DB Source Output].Columns[UpdatedDay]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[UpdatedDay]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2417,7 +2776,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Day]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Day]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2430,7 +2789,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Month]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Month]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2443,7 +2802,7 @@ WHERE STATUS = 1</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task\Split_Day.Outputs[Derived Column Output].Columns[Year]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task\Sort year.Outputs[Sort Output].Columns[Year]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2889,7 +3248,7 @@ WHERE STATUS = 1</property>
           <paths>
             <path
               refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\Insert Day.Inputs[OLE DB Command Input]"
+              endId="Package\Data Flow Task\Sort year.Inputs[Sort Input]"
               name="Derived Column Output"
               startId="Package\Data Flow Task\Split_Day.Outputs[Derived Column Output]" />
             <path
@@ -2926,7 +3285,7 @@ WHERE STATUS = 1</property>
               refId="Package\Data Flow Task.Paths[OLE DB Command Output]"
               endId="Package\Data Flow Task\Get_MonthID.Inputs[Lookup Input]"
               name="OLE DB Command Output"
-              startId="Package\Data Flow Task\Insert Day.Outputs[OLE DB Command Output]" />
+              startId="Package\Data Flow Task\Insert day.Outputs[OLE DB Command Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
               endId="Package\Data Flow Task\Split_Day.Inputs[Derived Column Input]"
@@ -2947,6 +3306,11 @@ WHERE STATUS = 1</property>
               endId="Package\Data Flow Task\Get_ProductID.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Data Flow Task\Sort_ReceiptDetail.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output2]"
+              endId="Package\Data Flow Task\Insert day.Inputs[OLE DB Command Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sort year.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3091,69 +3455,65 @@ WHERE STATUS = 1</property>
         <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Data Flow Task\Get_ProductID"
-          TopLeft="38.428574548946,281.452389271059" />
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\Data Flow Task\Get_DDS_CusID"
-          TopLeft="439.130949594968,397.921438479124" />
-        <NodeLayout
-          Size="146.666666666667,42.6666666666667"
-          Id="Package\Data Flow Task\Sort_ReceipID"
-          TopLeft="33.1190485485963,194.385722325443" />
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Data Flow Task\Insert Destination"
-          TopLeft="437.613088799109,286.611920331616" />
-        <NodeLayout
-          Size="173.333333333334,42.6666666666667"
-          Id="Package\Data Flow Task\NDS_Receipt_Detail"
-          TopLeft="234.065476082709,349.521432001292" />
-        <NodeLayout
-          Size="137.333333333334,42.6666666666667"
-          Id="Package\Data Flow Task\Get_StoreID"
-          TopLeft="301.690472124588,194.109530018368" />
-        <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\Data Flow Task\Get_DDS_ProductID"
-          TopLeft="4.75000375633488,396.066674771706" />
-        <NodeLayout
-          Size="140,42.6666666666667"
-          Id="Package\Data Flow Task\NDS_Receipt"
-          TopLeft="58.7499995343388,28" />
+          TopLeft="233.071428791399,202.52381925384" />
         <NodeLayout
           Size="166.666666666667,42"
           Id="Package\Data Flow Task\Sort_ReceiptDetail"
-          TopLeft="235.208333764847,281.919054093558" />
+          TopLeft="422.708330970879,199.27619842847" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Data Flow Task\Insert Destination"
+          TopLeft="697.285703977304,294.969063039321" />
+        <NodeLayout
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Sort_ReceipID"
+          TopLeft="50.0833340100945,200.885722209214" />
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\NDS_Receipt_Detail"
+          TopLeft="695.672612061369,197.235720438658" />
+        <NodeLayout
+          Size="137.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\Get_StoreID"
+          TopLeft="51.6904758498783,101.25238882164" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Get_DDS_ProductID"
+          TopLeft="39.5714318088838,294.0785813573" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Data Flow Task\NDS_Receipt"
+          TopLeft="55.1785710161286,22.1666667828957" />
         <NodeLayout
           Size="142.666666666667,42.6666666666667"
           Id="Package\Data Flow Task\Get_MonthID"
-          TopLeft="596.166658173005,95.8714328652611" />
-        <NodeLayout
-          Size="129.333333333334,42.6666666666667"
-          Id="Package\Data Flow Task\Insert Day"
-          TopLeft="277.833329682549,96.4619072093559" />
+          TopLeft="711.345227885282,102.371432749032" />
         <NodeLayout
           Size="137.333333333334,44.6666666666667"
           Id="Package\Data Flow Task\Get_DayID"
-          TopLeft="591.922610751309,193.988099613289" />
+          TopLeft="423.17261326588,102.988101240496" />
         <NodeLayout
           Size="124,42.6666666666667"
           Id="Package\Data Flow Task\Split_Day"
-          TopLeft="60.4999996274711,99.095238659779" />
+          TopLeft="250.678568222161,23.8809542904295" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Data Flow Task\Get_DDS_CusID"
+          TopLeft="393.446426466197,296.861916476685" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Sort Output1]"
-          TopLeft="235.208333764847,302.852388348976">
+          TopLeft="422.708330970879,222.066675507822">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-47.4464258825674,0"
+              EndConnector="-40.3035688461476,0"
               Start="0,0"
-              End="-39.9464258825674,0">
+              End="-32.8035688461476,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-39.9464258825674,0" />
+                    End="-32.8035688461476,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3164,18 +3524,18 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Sort Output]"
-          TopLeft="109.773811548771,237.05238899211">
+          TopLeft="196.750000676761,223.038104064861">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.4000002789498"
+              EndConnector="36.3214281146374,0"
               Start="0,0"
-              End="0,36.9000002789498">
+              End="28.8214281146374,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.9000002789498" />
+                    End="28.8214281146374,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3186,18 +3546,18 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
-          TopLeft="319.636904923778,349.521432001292">
+          TopLeft="695.672612061369,219.422626100231">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-25.6023779077337"
+              EndConnector="-106.297614423823,0"
               Start="0,0"
-              End="0,-18.1023779077337">
+              End="-98.797614423823,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-18.1023779077337" />
+                    End="-98.797614423823,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3208,40 +3568,18 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="125.624999580905,70.6666666666667">
+          TopLeft="195.178571016129,44.1904772033293">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.4285719931124"
+              EndConnector="55.4999972060325,0"
               Start="0,0"
-              End="0,20.9285719931124">
+              End="47.9999972060325,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.9285719931124" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="407.166663015882,117.500003370642">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="188.999995157123,0"
-              Start="0,0"
-              End="181.499995157123,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="181.499995157123,0" />
+                    End="47.9999972060325,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3252,136 +3590,30 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Merge Join Output]"
-          TopLeft="90.8115113748626,324.119055937726">
+          TopLeft="307.738095458065,245.190485920507">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71.9476188339796"
+              EndConnector="-180.833330315848,48.888095436793"
               Start="0,0"
-              End="0,64.4476188339796">
+              End="-180.833330315848,41.388095436793">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.4476188339796" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
-          TopLeft="179.416670423002,418.327389958748">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="259.714279171966,0"
-              Start="0,0"
-              End="252.214279171966,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,20.4440477183965" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4440477183965"
+                    Point2="0,24.4440477183965"
+                    Point3="-4,24.4440477183965" />
                   <mssgle:LineSegment
-                    End="252.214279171966,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="77.915752867233,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
-          TopLeft="301.690472124588,215.580959505239">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-121.904756909325,0"
-              Start="0,0"
-              End="-114.404756909325,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="-176.833330315848,24.4440477183965" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-176.833330315848,24.4440477183965"
+                    Point2="-180.833330315848,24.4440477183965"
+                    Point3="-180.833330315848,28.4440477183965" />
                   <mssgle:LineSegment
-                    End="-114.404756909325,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-105.393765173413,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
-          TopLeft="591.922610751309,215.882148149162">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-152.898805293387,0"
-              Start="0,0"
-              End="-145.398805293387,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-145.398805293387,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-120.890789365444,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="664.044634462157,138.538099531928">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55.4500000813609"
-              Start="0,0"
-              End="0,47.9500000813609">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.9500000813609" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,18.1703125406804,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="184.499999627471,119.111906267901">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="93.3333300550776,0"
-              Start="0,0"
-              End="85.8333300550776,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="85.8333300550776,0" />
+                    End="-180.833330315848,41.388095436793" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3392,54 +3624,201 @@ WHERE STATUS = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output4]"
-          TopLeft="518.372019197038,397.921438479124">
+          TopLeft="549.446426466197,317.248823091337">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-68.6428514808414"
+              EndConnector="147.839277511108,0"
               Start="0,0"
-              End="0,-61.1428514808414">
+              End="140.339277511108,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-61.1428514808414" />
+                    End="140.339277511108,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-36.3761132404207,96.3827734375,11.609375"
+              BoundingBox="21.978252036804,5,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output3]"
+          TopLeft="214.23809847555,316.803582250326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="179.208327990646,0"
+              Start="0,0"
+              End="171.708327990646,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="171.708327990646,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="37.6627772765731,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
+          TopLeft="121.886904929986,143.919055488307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.9666667209071"
+              Start="0,0"
+              End="0,49.4666667209071">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.4666667209071" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,18.9286458604536,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output1]"
+          TopLeft="423.17261326588,123.953578364401">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-234.148804082668,0"
+              Start="0,0"
+              End="-226.648804082668,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-226.648804082668,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-161.515788760084,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="711.345227885282,124.513100328097">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-150.839281286069,0"
+              Start="0,0"
+              End="-143.339281286069,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-143.339281286069,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-119.861027361784,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="122.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Sort year"
+          TopLeft="428.571422185217,25.0714281231165" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="374.678568222161,45.8095245401063">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.8928539630555,0"
+              Start="0,0"
+              End="46.3928539630555,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="46.3928539630555,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="128,42.6666666666667"
+          Id="Package\Data Flow Task\Insert day"
+          TopLeft="710.714275123818,18.5714282393455" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output2]"
+          TopLeft="551.238088851883,43.1547615145644">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159.476186271935,0"
+              Start="0,0"
+              End="151.976186271935,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="151.976186271935,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Command Output]"
+          TopLeft="778.696418171217,61.2380949060122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.1333378430198"
+              Start="0,0"
+              End="0,33.6333378430198">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.6333378430198" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get_DDS_CusID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[KhachHang]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\NDS_Receipt_Detail">
     <Properties>
@@ -3459,7 +3838,7 @@ WHERE STATUS = 1</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3469,7 +3848,7 @@ WHERE STATUS = 1</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3547,6 +3926,29 @@ WHERE STATUS = 1</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[NgayTrongThang]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Get_DDS_CusID">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[KhachHang]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>

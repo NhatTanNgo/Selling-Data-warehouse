@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{A3CD16C4-CDB6-41B4-B0AB-DF07A2D65795}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{A80B5873-700A-4CDE-9AF6-C7B5ED5EC6D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -446,7 +446,7 @@ where [refTable].[StoreTypeID] = ?</property>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select *
 From Store_NDS
-Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( UpdatedDate &gt;= ? And UpdatedDate &lt;?) )</property>
+Where STATUS = 1 AND  ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( UpdatedDate &gt;= ? And UpdatedDate &lt;?) )</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -701,7 +701,7 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[CuaHang] SET [TenCH] = ?,[TenLoaiCH] = ? WHERE [MaCH] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[CuaHang] SET [MaLoaiCH] = ?,[TenCH] = ?,[TenLoaiCH] = ? WHERE [MaCH] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -727,15 +727,21 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
                       refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].Columns[StoreID]"
                       cachedDataType="i4"
                       cachedName="StoreID"
-                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreID]" />
+                    <inputColumn
+                      refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].Columns[StoreType]"
+                      cachedDataType="i4"
+                      cachedName="StoreType"
+                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreType]" />
                     <inputColumn
                       refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].Columns[StoreName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="StoreName"
-                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreName]" />
                     <inputColumn
                       refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].Columns[StoreTypeName]"
@@ -743,22 +749,20 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="StoreTypeName"
-                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Populating table\Get StoreType_Name.Outputs[Lookup Match Output].Columns[StoreTypeName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Param_0">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
+                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -776,8 +780,21 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Populating table\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -832,7 +849,7 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [MaCH], [TenCH], [TenLoaiCH] FROM [dbo].[CuaHang]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [MaCH], [MaLoaiCH], [TenCH], [TenLoaiCH] FROM [dbo].[CuaHang]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -894,6 +911,19 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
                       </properties>
                     </inputColumn>
                     <inputColumn
+                      refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[StoreType]"
+                      cachedDataType="i4"
+                      cachedName="StoreType"
+                      externalMetadataColumnId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MaLoaiCH]"
+                      lineageId="Package\Populating table\NDS_Store.Outputs[OLE DB Source Output].Columns[StoreType]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[StoreName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -930,6 +960,10 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
                       refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MaCH]"
                       dataType="i4"
                       name="MaCH" />
+                    <externalMetadataColumn
+                      refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[MaLoaiCH]"
+                      dataType="i4"
+                      name="MaLoaiCH" />
                     <externalMetadataColumn
                       refId="Package\Populating table\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[TenCH]"
                       codePage="1252"
@@ -1135,39 +1169,27 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Populating table\OLE DB Command"
-          TopLeft="479.54166295069,20.3500052419307" />
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Populating table\Insert Destination"
-          TopLeft="220.49999679625,19.0500052651765" />
-        <NodeLayout
           Size="130.666666666667,42.6666666666667"
           Id="Package\Populating table\NDS_Store"
-          TopLeft="35.0416698424767,16.5499998024106" />
+          TopLeft="8.79167023363209,18.4999997675419" />
         <NodeLayout
           Size="180,42.6666666666667"
           Id="Package\Populating table\Get StoreType_Name"
-          TopLeft="9.12500319443626,136.116666166882" />
-        <NodeLayout
-          Size="209.333333333334,42.6666666666667"
-          Id="Package\Populating table\Slowly Changing Dimension"
-          TopLeft="333.833331470688,139.333334611853" />
+          TopLeft="195.821428983871,18.0952397058408" />
         <EdgeLayout
           Id="Package\Populating table.Paths[OLE DB Source Output]"
-          TopLeft="99.7500031851231,59.2166664690773">
+          TopLeft="139.458336900299,39.6309530700247">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76.8999996978045"
+              EndConnector="56.3630920835727,0"
               Start="0,0"
-              End="0,69.3999996978045">
+              End="48.8630920835727,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.3999996978045" />
+                    End="48.8630920835727,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1176,118 +1198,117 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populating table.Paths[New Output]"
-          TopLeft="404.944442581799,139.333334611853">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-102.444445785549,-77.6166626800099"
-              Start="0,0"
-              End="-102.444445785549,-70.1166626800099">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-27.399914105693" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-27.399914105693"
-                    Point2="0,-31.399914105693"
-                    Point3="-4,-31.399914105693" />
-                  <mssgle:LineSegment
-                    End="-98.444445785549,-31.399914105693" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-98.444445785549,-31.399914105693"
-                    Point2="-102.444445785549,-31.399914105693"
-                    Point3="-102.444445785549,-35.399914105693" />
-                  <mssgle:LineSegment
-                    End="-102.444445785549,-70.1166626800099" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-78.3136096115245,-26.399914105693,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\Populating table\Slowly Changing Dimension"
+          TopLeft="394.436009139066,174.735119693106" />
         <EdgeLayout
           Id="Package\Populating table.Paths[Lookup Match Output]"
-          TopLeft="189.125003194436,159.058333722701">
+          TopLeft="285.821428983871,60.7619063725075">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="144.708328276252,0"
+              EndConnector="179.725691266306,113.973213320598"
               Start="0,0"
-              End="137.208328276252,0">
+              End="179.725691266306,106.473213320598">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="137.208328276252,0" />
+                    End="0,63.8652129886242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.8652129886242"
+                    Point2="0,67.8652129886242"
+                    Point3="4,67.8652129886242" />
+                  <mssgle:LineSegment
+                    End="175.725691266306,67.8652129886242" />
+                  <mssgle:CubicBezierSegment
+                    Point1="175.725691266306,67.8652129886242"
+                    Point2="179.725691266306,67.8652129886242"
+                    Point3="179.725691266306,71.8652129886242" />
+                  <mssgle:LineSegment
+                    End="179.725691266306,106.473213320598" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="20.412777419376,5,96.3827734375,11.609375"
+              BoundingBox="41.671458914403,72.8652129886242,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Populating table\Insert Destination"
+          TopLeft="597.464276893331,22.6250052012504" />
         <EdgeLayout
-          Id="Package\Populating table.Paths[Changing Attribute Updates Output]"
-          TopLeft="472.055553692911,139.333334611853">
+          Id="Package\Populating table.Paths[New Output]"
+          TopLeft="532.658231361289,174.735119693106">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="90.8194425911126,-76.3166627032558"
+              EndConnector="146.806045532042,-109.443447825189"
               Start="0,0"
-              End="90.8194425911126,-68.8166627032558">
+              End="146.806045532042,-101.943447825189">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-26.8739975537824" />
+                    End="0,-40.2754782605061" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-26.8739975537824"
-                    Point2="0,-30.8739975537824"
-                    Point3="4,-30.8739975537824" />
+                    Point1="0,-40.2754782605061"
+                    Point2="0,-44.2754782605061"
+                    Point3="4,-44.2754782605061" />
                   <mssgle:LineSegment
-                    End="86.8194425911126,-30.8739975537824" />
+                    End="142.806045532042,-44.2754782605061" />
                   <mssgle:CubicBezierSegment
-                    Point1="86.8194425911126,-30.8739975537824"
-                    Point2="90.8194425911126,-30.8739975537824"
-                    Point3="90.8194425911126,-34.8739975537824" />
+                    Point1="142.806045532042,-44.2754782605061"
+                    Point2="146.806045532042,-44.2754782605061"
+                    Point3="146.806045532042,-48.2754782605061" />
                   <mssgle:LineSegment
-                    End="90.8194425911126,-68.8166627032558" />
+                    End="146.806045532042,-101.943447825189" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-33.1241849544437,-25.8739975537824,157.0678125,11.6630859375"
+              BoundingBox="46.3116360472711,-39.2754782605061,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Populating table\OLE DB Command"
+          TopLeft="13.5372056089828,167.250002615154" />
+        <EdgeLayout
+          Id="Package\Populating table.Paths[Changing Attribute Updates Output]"
+          TopLeft="394.436009139066,192.325894487463">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-214.232136863417,0"
+              Start="0,0"
+              End="-206.732136863417,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-206.732136863417,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-181.899974681709,5,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populating table\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Populating table\NDS_Store">
     <Properties>
@@ -1340,7 +1361,7 @@ Where STATUS = 1 AND ( ( CreatedDate &gt;= ? And CreatedDate &lt;?) or ( Updated
       &lt;IdentificationString&gt;NDS_Store.Outputs[OLE DB Source Output].Columns[StoreType]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;MaLoaiCH&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;NDS_Store.Outputs[OLE DB Source Output].Columns[SourceID]&lt;/IdentificationString&gt;
